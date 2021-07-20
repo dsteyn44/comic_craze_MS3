@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/get_comics")
 def get_comics():
     comics = mongo.db.comics.find()
-    return render_template("comic.html", comics = comics)
+    return render_template("comic.html", comics=comics)
 
 
 if __name__ == "__main__":
