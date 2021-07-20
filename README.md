@@ -55,6 +55,7 @@ This is the main marketing website for Code Institute. It is designed to be resp
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Python](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 
 ### Frameworks, Libraries & Programs Used
 
@@ -76,6 +77,8 @@ This is the main marketing website for Code Institute. It is designed to be resp
     - Photoshop was used to create the logo, resizing images and editing photos for the website.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+1. [RandomKeygen:](https://balsamiq.com/)
+    - RandomKeygen was used to create a random password (https://github.com/) during the coding process.
 
 ## Testing
 
@@ -219,7 +222,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
--   All Images were created by the developer.
+-   Freep
+-   Freepi.
 
 ### Acknowledgements
 
