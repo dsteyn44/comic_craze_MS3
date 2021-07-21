@@ -1,5 +1,5 @@
-{% extends "base.html" %} <!--This connects to base.html-->
-   
+{% extends "base.html" %} <!--This connects to parent base.html-->
+{% block content %}   
     {% for comic in comics %}
         {{ comic.superhero }} <br>
         {{ comic.author }} <br>
