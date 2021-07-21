@@ -77,8 +77,10 @@ This is the main marketing website for Code Institute. It is designed to be resp
     - Photoshop was used to create the logo, resizing images and editing photos for the website.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
-1. [RandomKeygen:](https://balsamiq.com/)
+1. [RandomKeygen:](https://randomkeygen.com/)
     - RandomKeygen was used to create a random password (https://github.com/) during the coding process.
+1. [Freepik:](https://www.freepik.com/home/)
+    - Freepik is a library of free images.
 
 ## Testing
 
