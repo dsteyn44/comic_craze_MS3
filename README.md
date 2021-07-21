@@ -156,6 +156,11 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     -   A white gap can be seen to the right of the footer and navigation bar as a result.
 -   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
 
+### Bug Fix
+
+-   Was deploying on Heroku but showed an error pymongo Auth fail. I worked out that my MONGO_URI Connection was incorrect.
+    
+
 ## Deployment
 
 ### GitHub Pages
