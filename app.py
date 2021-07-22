@@ -105,6 +105,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+@app.route("/add_comics")
+def add_comics():
+    return render_template("add_comics.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

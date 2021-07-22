@@ -10,6 +10,7 @@
 {{ comic.rating }} <br>
 {% endfor %}-->
 <!--Comic section-->
+<!--container and card taken from materialize-->
 <div class="container">
     <div class="section">
         <div class="row">
@@ -49,10 +50,10 @@
                 <div class="icon-block">
                     <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
                     <h5 class="center">Easy to work with</h5>
-
-                    <p class="light">We have provided detailed documentation as well as specific code examples to help
-                        new users get started. We are also always open to feedback and can answer any questions a user
-                        may have about Materialize.</p>
+                    <button type="button" class="btn btn-lg btn-danger" data-mdb-toggle="popover" title="Popover title"
+                        data-mdb-content="And here's some amazing content. It's very engaging. Right?">
+                        Click to toggle popover
+                    </button>
                 </div>
             </div>
         </div>

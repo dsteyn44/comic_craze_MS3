@@ -23,6 +23,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_comics') }}">Comics</a></li>
+        <li><a href="{{ url_for('add_comics') }}">Add Comics</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
           <li><a href="{{ url_for('logout') }}">log Out</a></li>
@@ -40,6 +41,7 @@
     </li>
     <li><a href="{{ url_for('home') }}">Home</a></li>
     <li><a href="{{ url_for('get_comics') }}">Comics</a></li>
+    <li><a href="{{ url_for('add_comics') }}">Add Comics</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
           <li><a href="{{ url_for('logout') }}">log Out</a></li>
@@ -60,6 +62,10 @@
     {% endif %}
     {% endwith %}
   </section>
+  <div>
+    {% block home %}
+    {% endblock %}
+  </div>
   <main>
     {% block content %}
     {% endblock %}
