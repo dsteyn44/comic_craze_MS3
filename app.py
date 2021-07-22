@@ -50,6 +50,11 @@ def register():
 
     return render_template("signup.html")
 
+# build login functionality
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("signin.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
