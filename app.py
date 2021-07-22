@@ -85,6 +85,7 @@ def profile(username):
     return render_template("profile.html", username=username)
     # first username from htmnl 2nd from var above 
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
