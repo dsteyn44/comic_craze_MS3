@@ -23,6 +23,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
         <li><a href="#">Comics</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
         <li><a href="{{ url_for('register') }}">Sign Up!</a></li>
         <li><a href="{{ url_for('login') }}">Sign In</a></li>
       </ul>
@@ -35,6 +36,7 @@
     </li>
     <li><a href="#">Home</a></li>
     <li><a href="#">Comics</a></li>
+    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
     <li><a href="{{ url_for('register') }}">Sign Up!</a></li>
     <li><a href="{{ url_for('login') }}">Sign In</a></li>
   </ul>
