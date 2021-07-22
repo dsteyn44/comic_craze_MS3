@@ -17,11 +17,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# adding route to home page
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 # adding the decorator that includes a route to function
 @app.route("/")
 @app.route("/get_comics")
 def get_comics():
-    comics = mongo.db.comics.find()
+    comics = list(mongo.db.comics.find())
     return render_template("comics.html", comics=comics)
 
 

@@ -17,12 +17,12 @@
 <body>
   <!--Navbar from materialize-->
   <nav>
-    <div class="nav-wrapper nav-extended">
+    <div class="nav-wrapper">
       <a href="#!" class="brand-logo logo-text">Kapow</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Comics</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('get_comics') }}">Comics</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
           <li><a href="{{ url_for('logout') }}">log Out</a></li>
@@ -38,8 +38,8 @@
     <li>
       <h4 class="logo-text">Kapow</h4>
     </li>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Comics</a></li>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('get_comics') }}">Comics</a></li>
         {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li><!--we are setting this to the session so that only be viewed by session logger-->
           <li><a href="{{ url_for('logout') }}">log Out</a></li>
