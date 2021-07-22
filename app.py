@@ -37,18 +37,21 @@ def register():
             return redirect(url_for("register"))
 
         register = {
-            "username": request.form.get("username".lower(),
-            "password": generate_password_hash(request.form.get("password")))
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome aboard!")
+        # return redirect(url_for("profile.html"))
+
     return render_template("signup.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+            
