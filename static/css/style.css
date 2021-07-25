@@ -21,3 +21,7 @@
       height: 50px;
       width: 50px;
   }
+
+  .card-panel {
+      border-radius: 10px;
+  }
