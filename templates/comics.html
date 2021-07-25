@@ -6,7 +6,7 @@
 {{ comic.author }} <br>
 {{ comic.date_released }} <br>
 {{ comic.title }} <br>
-{{ comic.image }} <br>
+{{ comic.cover_image }} <br>
 {{ comic.rating }} <br>
 {% endfor %}-->
 <!--Comic section-->
@@ -18,7 +18,7 @@
                 <div class="card">
                     {% for comic in comics %}
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="{{ comic.image }}">
+                        <img class="activator " src="{{ comic.cover_image }}">
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">{{ comic.title }}<i

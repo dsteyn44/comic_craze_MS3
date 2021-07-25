@@ -56,7 +56,7 @@ This is the main marketing website for Code Institute. It is designed to be resp
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Python](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
-
+-   [JQuery]https://jquery.com/
 ### Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
@@ -81,7 +81,8 @@ This is the main marketing website for Code Institute. It is designed to be resp
     - RandomKeygen was used to create a random password (https://github.com/) during the coding process.
 1. [Freepik:](https://www.freepik.com/home/)
     - Freepik is a library of free images.
-
+1. [Material Bootstrap] (https://mdbootstrap.com/)
+    - Material bootstrap is 
 ## Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.

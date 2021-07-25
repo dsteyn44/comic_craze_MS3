@@ -45,6 +45,7 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
@@ -101,7 +102,8 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remove session cookies
-    flash("You have been logged out")
+    flash("Sad to see you go {}".format(
+                            request.form.get("username")))
     session.pop("user")
     return redirect(url_for("login"))
 
