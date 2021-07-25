@@ -110,9 +110,26 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-@app.route("/add_comics")
+# Build the POST method
+@app.route("/add_comics", methods=["GET", "POST"])
 def add_comics():
-    return render_template("add_comics.html")
+    if request.method == "POST":
+        ad_comic = {
+            "superhero": request.form.get("superhero").lower(),
+            "author": request.form.get("author").lower(),
+            "date_released": request.form.get("date_released").lower(),
+            "title": request.form.getlist("title").lower(),
+            "grade_1": request.form.get("grade_1").lower(),
+            "publisher": request.form.get("publisher").lower(),
+            "cover_image": request.form.get("cover_image").lower(),
+            }
+
+        mongo.db.comics.insert_one(ad_comic)
+        flash("Comic Successfully Added")
+        return redirect(url_for("get_comics"))
+
+    grades = mongo.db.grades.find().sort("grade_1", 1)
+    return render_template("add_comics.html", grades=grades)
 
 
 if __name__ == "__main__":
