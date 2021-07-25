@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.parallax').parallax();
+    $('.dropdown-trigger').dropdown();
     $('.datepicker').datepicker({
       format: "dd mmmm, yyyy",
       yearRange: 100,
@@ -9,4 +10,5 @@ $(document).ready(function(){
           done: "Select"
       }
     });
+     $('select').formSelect();
   });

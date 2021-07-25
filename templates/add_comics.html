@@ -3,11 +3,12 @@
 <!--Icon prefix from materialize-->
 <h3 class="light-blue-text text-darken-4 center-align">Add to the Comic Collection</h3>
 <div class="row">
-    <form class="col card-panel s12 m8 offset-m2" method="POST" action="">
+    <form class="card-panel col s12 m8 offset-m2 center-align" method="POST" action="{{ url_for('add_comics') }}">
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">stars</i>
-                <input id="superhero" name="superhero"type="text" minlength="5" maxlength="50" class="validate" required>
+                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="50" class="validate"
+                    required>
                 <label for="superhero">Superhero</label>
             </div>
         </div>
@@ -23,34 +24,51 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                <input id="date_released" name="date_released" type="text" minlength="5" maxlength="50" class="validate datepicker" required>
+                <input id="date_released" name="date_released" type="text" class="datepicker validate" required>
                 <label for="date_released">Release Date</label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">grade</i>
-                <input id="rating" name="rating" type="text" minlength="5" maxlength="50" class="validate" required>
-                <label for="rating">Rate the Issue</label>
-            </div>
-        </div>
+        <!-- comments-->
         <div class="row">
             <div class="input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
                 <i class="material-icons prefix">insert_comment</i>
-                <textarea id="comments" name="comments" class="materialize-textarea"></textarea>
+                <textarea id="comments" name="comments" class="materialize-textarea" required></textarea>
                 <label for="comments">Comments</label>
             </div>
         </div>
+        <!-- drop down rater-->
+        <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix light-blue-text text-darken-4">grades</i>
+                <select id="ratings" name="ratings" class="validate" required>
+                    <option value="" disabled select>Pick your rating</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                </select>
+                <label>Rate this comic from 1 to 5 stars!</label>
+            </div>
+        </div>
         <!--image file-->
-        <div class="file-field input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
-            <div class="btn">
-                <span>URL</span>
-                <input type="file">
+        <div class="row">
+            <div class="file-field input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
+                <div class="btn #01579b light-blue darken-4">
+                    <span>URL</span>
+                    <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <label for="title">Add image address URL</label>
+                    <input class="file-path validate" id="cover_image" name="cover_image" type="text">
+                </div>
             </div>
-            <div class="file-path-wrapper">
-                <label for="title">Add image address URL</label>
-                <input class="file-path validate" id="cover_image" name="cover_image" type="text">
-            </div>
+        </div>
+        <!--submit button-->
+        <div class="row">
+            <button class="btn #01579b light-blue darken-4 center-align waves-effect waves-light" type="submit">Add Comic
+                <i class="material-icons right">send</i>
+            </button>
         </div>
     </form>
 </div>
