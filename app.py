@@ -45,15 +45,17 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
+            "fav_superhero": request.form.get("fav_superhero").lower(),
             "email": request.form.get("email").lower(),
-            "superhero": request.form.get("superhero").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
+
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Welcome aboard!")
+        flash("Welcome aboard, {}".format(
+            request.form.get("username")))
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("signup.html")
