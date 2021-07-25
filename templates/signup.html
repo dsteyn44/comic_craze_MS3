@@ -8,12 +8,31 @@
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
+            <!--Add username-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="username" name="username" minlength="5" maxlength="15" type="text"
-                        pattern="^[a-zA-Z0-9{5-15}]$" class="validate" required>
+                    <input id="username" name="username" maxlength="30" type="text"
+                        pattern="^[a-zA-Z0-9{0-15}]$" class="validate" required>
                     <!--add required and min/max length-->
-                    <label for="username">SuperHero Name</label>
+                    <label for="username">Your SuperHero Name</label>
+                </div>
+            </div>
+            <!--Add favorite super hero-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" name="username" minlength="5" maxlength="15" type="text" pattern="^[a-zA-Z0-9{5-15}]$"
+                        class="validate" required>
+                    <!--add required and min/max length-->
+                    <label for="username">Your SuperHero Name</label>
+                </div>
+            </div>
+            <!--Email field-->
+            <div class="row">
+                <!--Add pattern for email- code from ww3-->
+                <div class="input-field col s12">
+                    <input id="email" type="email" name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        class="validate" required>
+                    <label for="email">Email</label>
                 </div>
             </div>
             <!--Password field-->
@@ -22,15 +41,6 @@
                     <input id="password" type="password" name="password" minlength="5" maxlength="15" type="text"
                         pattern="^[a-zA-Z0-9{5-15}]$" class="validate" required>
                     <label for="password">Password</label>
-                </div>
-            </div>
-            <!--Email field-->
-            <div class="row">
-                <!--Add pattern for email- code from ww3-->
-                <div class="input-field col s12">
-                    <input id="email" type="email" name="email" type="text"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="validate" required>
-                    <label for="email">Email</label>
                 </div>
             </div>
             <!--Submit button-->

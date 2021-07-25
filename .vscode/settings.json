@@ -25,5 +25,6 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "[html]": {
       "editor.defaultFormatter": "vscode.html-language-features"
-   }
+   },
+   "editor.formatOnPaste": true
 }
