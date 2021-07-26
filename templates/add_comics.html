@@ -48,8 +48,8 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
                 <i class="material-icons prefix">insert_comment</i>
-                <textarea id="comments" name="comments" class="materialize-textarea" minlength="5" maxlength="50" required></textarea>
-                <label for="comments">Comments</label>
+                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50" required></textarea>
+                <label for="comment">Comments</label>
             </div>
         </div>
         <!-- drop down rater-->
@@ -59,7 +59,7 @@
                 <select id="grade_star" name="grade_star" class="validate">
                     <option value="" disabled select>Pick your rating</option>
                 {% for grade in grades %}
-                <option value="{{ grade.grade_star }}"><i class="material-icons">{{ grade.grade_star }}</i></option>
+                <option value="{{ grade.grade_star }}">{{ grade.grade_star }}</option>
                 {% endfor %}
                 </select>
                 <label>Rate this comic from 1 to 5 stars!</label>
@@ -67,15 +67,10 @@
         </div>
         <!--image file-->
         <div class="row">
-            <div class="file-field input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
-                <div class="btn #01579b light-blue darken-4">
-                    <span>URL</span>
-                    <input type="file">
-                </div>
-                <div class="file-path-wrapper">
-                    <label for="title">Add image address URL</label>
-                    <input class="file-path validate" id="cover_image" name="cover_image" type="text">
-                </div>
+            <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix light-blue-text text-darken-4">present_to_all</i>
+                <input id="cover_image" name="cover_image" type="text" class="validate" required>
+                <label for="cover_image">Add URL link here for cover Image</label>
             </div>
         </div>
         <!--submit button-->

@@ -1,63 +1,48 @@
 {% extends "base.html" %}
 <!--This connects to parent base.html-->
-<!--{% block content %}
-{% for comic in comics %}
-{{ comic.superhero }} <br>
-{{ comic.author }} <br>
-{{ comic.date_released }} <br>
-{{ comic.title }} <br>
-{{ comic.cover_image }} <br>
-{{ comic.rating }} <br>
-{% endfor %}-->
+{% block content %}
+<!--Heading taken from materialize-->
+<div class="row">
+    <div class="grid-example col s12 center-align"><span class="flow-text">
+            <h1>Our Comic Collection</h1>
+        </span></div>
+    <div class="grid-example col s12 center-align"><span class="flow-text">
+            <p>This is our comic book collection for you see.</p>
+        </span></div>
+</div>
+</div>
 <!--Comic section-->
-<!--container and card taken from materialize-->
+<!--container and card taken from materialize-followed the minitask project-->
 <div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="card">
-                    {% for comic in comics %}
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator " src="{{ comic.cover_image }}">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">{{ comic.title }}<i
-                                class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
-                                class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                    {% endfor %}
+    <div class="row">
+        {% for comic in comics %}
+        <div class="col s12 m4 center-align">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light center-align">
+                    <img class="activator " src="{{ comic.cover_image }}">
                 </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">User Experience Focused</h5>
-
-                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a
-                        framework that incorporates components and animations that provide more feedback to users.
-                        Additionally, a single underlying responsive system across all platforms allow for a more
-                        unified user experience.</p>
+                <div class="card-content light-green accent-3 ">
+                    <span class="card-title activator grey-text text-darken-4">
+                        <p class="card-text"><strong>{{ comic.superhero }}</strong></p>
+                        <p><small>{{ comic.title }}</small></p>
+                        <p><small>{{ comic.grade_star }}</small></p>
+                        <i class="fas fa-info-circle"></i>
+                    </span>
                 </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
-                    <button type="button" class="btn btn-lg btn-danger" data-mdb-toggle="popover" title="Popover title"
-                        data-mdb-content="And here's some amazing content. It's very engaging. Right?">
-                        Click to toggle popover
-                    </button>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
+                            class="material-icons right">close</i>
+                    </span>
+                    <span>
+                        <p class="left cd-margin">Author: {{ comic.author }}</p>
+                        <p class="left cd-margin">Date Released: {{ comic.date_released }}</p>
+                        <p class="left cd-margin">Publisher: {{ comic.publisher }}</p>
+                        <p class="left cd-margin justify-right">Comment: {{ comic.comment }}</p>
+                    </span>
                 </div>
             </div>
         </div>
-
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

@@ -115,13 +115,14 @@ def logout():
 def add_comics():
     if request.method == "POST":
         ad_comic = {
-            "superhero": request.form.get("superhero").lower(),
-            "author": request.form.get("author").lower(),
-            "date_released": request.form.get("date_released").lower(),
-            "title": request.form.get("title").lower(),
-            "grade_star": request.form.getlist("grade_star").lower(),
-            "publisher": request.form.get("publisher").lower(),
-            "cover_image": request.form.get("cover_image").lower(),
+            "superhero": request.form.get("superhero"),
+            "author": request.form.get("author"),
+            "date_released": request.form.get("date_released"),
+            "title": request.form.get("title"),
+            "grade_star": request.form.getlist("grade_star"),
+            "publisher": request.form.get("publisher"),
+            "cover_image": request.form.get("cover_image"),
+            "comment": request.form.get("comment"),
             }
 
         mongo.db.comics.insert_one(ad_comic)
