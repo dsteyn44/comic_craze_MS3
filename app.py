@@ -119,7 +119,7 @@ def add_comics():
             "author": request.form.get("author"),
             "date_released": request.form.get("date_released"),
             "title": request.form.get("title"),
-            "grade_star": request.form.getlist("grade_star"),
+            "grade_star": request.form.get("grade_star"),
             "publisher": request.form.get("publisher"),
             "cover_image": request.form.get("cover_image"),
             "comment": request.form.get("comment"),

@@ -25,7 +25,7 @@
                     <span class="card-title activator grey-text text-darken-4">
                         <p class="card-text"><strong>{{ comic.superhero }}</strong></p>
                         <p><small>{{ comic.title }}</small></p>
-                        <p><small>{{ comic.grade_star }}</small></p>
+                        <p><small>Author: {{ comic.grade_star }}</small></p>
                         <i class="fas fa-info-circle"></i>
                     </span>
                 </div>
@@ -34,10 +34,10 @@
                             class="material-icons right">close</i>
                     </span>
                     <span>
-                        <p class="left cd-margin">Author: {{ comic.author }}</p>
-                        <p class="left cd-margin">Date Released: {{ comic.date_released }}</p>
-                        <p class="left cd-margin">Publisher: {{ comic.publisher }}</p>
-                        <p class="left cd-margin justify-right">Comment: {{ comic.comment }}</p>
+                        <p class="left cd-margin">Author: {{ comic.author }}</p><br>
+                        <p class="left cd-margin">Date Released: {{ comic.date_released }}</p><br>
+                        <p class="left cd-margin">Publisher: {{ comic.publisher }}</p><br>
+                        <p class="left cd-margin">Comment: {{ comic.comment }}</p><br>
                     </span>
                 </div>
             </div>
