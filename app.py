@@ -118,8 +118,8 @@ def add_comics():
             "superhero": request.form.get("superhero").lower(),
             "author": request.form.get("author").lower(),
             "date_released": request.form.get("date_released").lower(),
-            "title": request.form.getlist("title").lower(),
-            "grade_1": request.form.get("grade_1").lower(),
+            "title": request.form.get("title").lower(),
+            "grade_star": request.form.getlist("grade_star").lower(),
             "publisher": request.form.get("publisher").lower(),
             "cover_image": request.form.get("cover_image").lower(),
             }
@@ -128,7 +128,7 @@ def add_comics():
         flash("Comic Successfully Added")
         return redirect(url_for("get_comics"))
 
-    grades = mongo.db.grades.find().sort("grade_1", 1)
+    grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
 
 
