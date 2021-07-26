@@ -31,7 +31,16 @@ def get_comics():
     comics = list(mongo.db.comics.find())
     return render_template("comics.html", comics=comics)
 
+# search function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    mongo.db.comics.create_index([("superhero", "text"), (
+        "title", "text")])
+    comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
+    return render_template("comics.html", comics=comics)
 
+# Our sign-up page
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

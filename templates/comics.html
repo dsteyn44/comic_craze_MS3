@@ -11,6 +11,23 @@
         </span></div>
 </div>
 </div>
+<!--search function-->
+<div class="row card-panel col s8 offset-m2">
+    <form method="POST" action="{{ url_for('search') }}" class="col s8 offset-m2">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <i class="fa fas-search prefix light-blue-text"></i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search comics</label>
+            </div>
+            <div class="col s12 m4">
+                <a href="{{ url_for('get_comics') }}" class="red btn text-shadow">Reset</a>
+                <button type="submit" class="btn light-blue text-shadow">Search</button>
+                <i class="fa fa-search left"></i>
+            </div>
+        </div>
+    </form>
+</div>
 <!--Comic section-->
 <!--container and card taken from materialize-followed the minitask project-->
 <div class="container">
