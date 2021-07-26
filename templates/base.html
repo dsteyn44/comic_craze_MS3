@@ -16,7 +16,7 @@
 
 <body>
   <!--Navbar from materialize-->
-  <nav>
+  <nav class="#e53935 red darken-1">
     <div class="nav-wrapper">
       <a href="{{ url_for('home') }}" class="brand-logo logo-text">Kapow</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -35,7 +35,7 @@
     </div>
   </nav>
   <!--Side bar from materialize-->
-  <ul class="sidenav" id="mobile-demo">
+  <ul class="sidenav #e53935 red darken-1" id="mobile-demo">
     <li>
       <h4 class="logo-text">Kapow</h4>
     </li>
@@ -71,74 +71,53 @@
     {% endblock %}
   </main>
   <!--footer from Material Bootstrap-->
-    <footer class="bg-light text-center center-align text-white">
+    <footer class="bg-danger text-center center-align text-white" style="background-color: #3b5998;">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
         <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #3b5998;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-    
-          <!-- Twitter -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #55acee;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-twitter"></i
-          ></a>
-    
-          <!-- Google -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #dd4b39;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-google"></i
-          ></a>
-    
-          <!-- Instagram -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #ac2bac;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-instagram"></i
-          ></a>
-    
-          <!-- Linkedin -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #0082ca;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <!-- Github -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #333333;"
-            href="#!"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
+        
         <!-- Section: Social media -->
       </div>
       <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+     <!--Footer from amterialize with some MBD social icons added-->
+    </footer>
+    <footer class="page-footer #e53935 red darken-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text logo-text">Kapow Comic Collections</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+          </div>
+        </div>
       </div>
-      <!-- Copyright -->
+      <section class="text-center center-align mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
+            class="fab fa-facebook-f"></i></a>
+      
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;;" href="#!" role="button"><i
+            class="fab fa-twitter"></i></a>
+      
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;;" href="#!" role="button"><i
+            class="fab fa-google"></i></a>
+      
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;;" href="#!" role="button"><i
+            class="fab fa-instagram"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;;" href="#!" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <div class="footer-copyright #e53935 red darken-1">
+        <div class="container">
+          © 2021 Kapow Comic Collections
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
     </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

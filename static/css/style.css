@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
-
+/*--Home page--*/
 /*--NavBar Styling--*/
 .logo-text {
     font-family: 'Bangers', cursive;
@@ -24,6 +25,11 @@
   
   .card-panel {
       border-radius: 10px;
+  }
+
+  .card-text {
+      font-family: 'Bungee Shade', cursive;
+      font-size: 50px;
   }
   /*--card in comics--*/
   
