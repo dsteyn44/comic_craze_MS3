@@ -144,6 +144,21 @@ def add_comics():
 
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 def edit_comic(comic_id):
+    if request.method == "POST":
+        submit = {
+            "superhero": request.form.get("superhero"),
+            "author": request.form.get("author"),
+            "date_released": request.form.get("date_released"),
+            "title": request.form.get("title"),
+            "grade_star": request.form.get("grade_star"),
+            "publisher": request.form.get("publisher"),
+            "cover_image": request.form.get("cover_image"),
+            "comment": request.form.get("comment"),
+            }
+
+        mongo.db.tasks.update({"_id": ObjectId(comic_id)}, submit)
+        flash("Task Successfully Updated")
+
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("edit_comics.html", comic=comic, grades=grades)
