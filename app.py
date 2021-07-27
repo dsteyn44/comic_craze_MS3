@@ -137,7 +137,10 @@ def logout():
 
 # Build the POST method
 @app.route("/add_comics", methods=["GET", "POST"])
-def add_comics():
+def add_comics(comic_id):
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
     if request.method == "POST":
         ad_comic = {
             "superhero": request.form.get("superhero"),
@@ -152,7 +155,8 @@ def add_comics():
 
         mongo.db.comics.insert_one(ad_comic)
         flash("Comic Successfully Added")
-        return redirect(url_for("get_comics"))
+        return redirect(url_for("profile", username=session['user']))
+
 # Add rating/grader for cards
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
@@ -189,17 +193,26 @@ def delete_comic(comic_id):
     return redirect(url_for("get_comics"))
 
 
-@app.route("/inject_comic", methods=["GET", "POST"])
-def inject_comic():
+@app.route("/insert_comic/<comic_id>", methods=["GET", "POST"])
+def insert_comic(comic_id):
     if request.method == "POST":
-        user_comics = {
-            "created_by": request.form.get_list("created_by")
-        }
+        submit = {
+            "superhero": request.form.get("superhero"),
+            "author": request.form.get("author"),
+            "date_released": request.form.get("date_released"),
+            "title": request.form.get("title"),
+            "grade_star": request.form.get("grade_star"),
+            "publisher": request.form.get("publisher"),
+            "cover_image": request.form.get("cover_image"),
+            "comment": request.form.get("comment"),
+            }
 
-        mongo.db.comics.insert({"created_by": session["user"]})
-        return render_template(url_for(
-            "profile.html"), user_comics=user_comics)
+        mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
+        flash("Task Successfully Updated")
 
+    comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+    grades = mongo.db.grades.find().sort("grade_star", 1)
+    return render_template("edit_comics.html", comic=comic, grades=grades)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
