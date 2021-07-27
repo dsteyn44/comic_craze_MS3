@@ -137,10 +137,16 @@ def add_comics():
         mongo.db.comics.insert_one(ad_comic)
         flash("Comic Successfully Added")
         return redirect(url_for("get_comics"))
-
+# Add rating/grader for cards
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
 
+
+@app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
+def edit_comic(comic_id):
+    comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+    grades = mongo.db.grades.find().sort("grade_star", 1)
+    return render_template("edit_comics.html", comic=comic, grades=grades)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
