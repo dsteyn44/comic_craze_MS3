@@ -7,7 +7,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">stars</i>
-                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="50" class="validate"
+                <input value="{{ comic.superhero }}" id="superhero" name="superhero" type="text" minlength="5" maxlength="50" class="validate"
                     required>
                 <label for="superhero">Superhero</label>
             </div>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="fas fa-book-open prefix light-blue-text text-darken-4"></i>
-                <input id="title" name="title" type="text" minlength="5" maxlength="50" class="validate" required>
+                <input value="{{ comic.title }}" id="title" name="title" type="text" minlength="5" maxlength="50" class="validate" required>
                 <label for="title">Author Title</label>
             </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">turned_in</i>
-                <input id="author" name="author" type="text" minlength="5" maxlength="50" class="validate" required>
+                <input value="{{ comic.author }}" id="author" name="author" type="text" minlength="5" maxlength="50" class="validate" required>
                 <label for="author">Author</label>
             </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">verified_user</i>
-                <input id="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate" required>
+                <input value="{{ comic.publisher }}" id="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate" required>
                 <label for="publisher">Publisher</label>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                <input id="date_released" name="date_released" type="text" class="datepicker validate" required>
+                <input value="{{ comic.date_released }}" id="date_released" name="date_released" type="text" class="datepicker validate" required>
                 <label for="date_released">Release Date</label>
             </div>
         </div>
@@ -48,20 +48,20 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
                 <i class="material-icons prefix">insert_comment</i>
-                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50" required></textarea>
+                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50" required>{{ comic.comment }}</textarea>
                 <label for="comment">Comments</label>
             </div>
         </div>
         <!-- drop down rater-->
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">grades grades grades</i>
                 <select id="grade_star" name="grade_star" class="validate">
                     <option value="" disabled select>Pick your rating</option>
                 {% for grade in grades %}
-                <option value="{{ grade.grade_star }}">{{ grade.grade_star }}</option>
+                <option value="{{ grade.grade_star }}">{{- grade.grade_star -}}</option>
                 {% endfor %}
                 </select>
+                <i class="material-icons prefix light-blue-text text-darken-4">grades</i>
                 <label>Rate this comic from 1 to 5 stars!</label>
             </div>
         </div>
@@ -69,12 +69,14 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">present_to_all</i>
-                <input id="cover_image" name="cover_image" type="text" class="validate" required>
+                <input value="{{ comic.cover_image }}" id="cover_image" name="cover_image" type="text" class="validate">
                 <label for="cover_image">Add URL link here for cover Image</label>
             </div>
         </div>
         <!--submit button-->
         <div class="row">
+        <!--Cancel button-->
+        <a href="{{ url_for('get_comics') }}" class="btn-large red text-shadow">Cancel<i class="fas fa-times-circle right"></i></a>
             <button class="btn #01579b light-blue darken-4 center-align waves-effect waves-light" type="submit">Edit Comic
                 <i class="fas fa-edit right"></i>
             </button>
