@@ -33,13 +33,6 @@ def get_comics():
     return render_template("comics.html", comics=comics)
 
 
-@app.route("/")
-@app.route("/collect_comics")
-def add_profile():
-    comics_books = list(mongo.db.comics.find())
-    return render_template("profile.html", comics=comics_books)
-
-
 # search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -79,6 +72,7 @@ def register():
 
     return render_template("signup.html")
 
+
 # ---------------------------------build login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -108,16 +102,26 @@ def login():
 
     return render_template("signin.html")
 
+
 # ---------------------------------------------Creating profile function
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+     # Users can access only
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
-
+        if session["user"] == "admin":
+            user_comics = list(mongo.db.comics.find())
+        else:
+            # Comics are only available to user
+            user_comics = list(
+                mongo.db.comics.find({"created_by": session["user"]}))
+        return render_template(
+            "profile.html", username=username, user_comics=user_comics)
     return redirect(url_for("login"))
 
 
@@ -129,6 +133,7 @@ def logout():
                             request.form.get("username")))
     session.pop("user")
     return redirect(url_for("login"))
+
 
 # Build the POST method
 @app.route("/add_comics", methods=["GET", "POST"])
@@ -168,7 +173,7 @@ def edit_comic(comic_id):
             "comment": request.form.get("comment"),
             }
 
-        mongo.db.tasks.update({"_id": ObjectId(comic_id)}, submit)
+        mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
         flash("Task Successfully Updated")
 
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
@@ -177,11 +182,23 @@ def edit_comic(comic_id):
 
 
 # ---------------------------------------------------------------------Adding delete function for comics in comic.html
-@app.route("/delete_comic/<comic_id>")    
+@app.route("/delete_comic/<comic_id>")
 def delete_comic(comic_id):
     mongo.db.comics.remove({"_id": ObjectId(comic_id)})
-    flash("And don't come back again, Evil Fiend!!")
+    flash("Be gone Evil Fiend!!")
     return redirect(url_for("get_comics"))
+
+
+@app.route("/inject_comic", methods=["GET", "POST"])
+def inject_comic():
+    if request.method == "POST":
+        user_comics = {
+            "created_by": request.form.get_list("created_by")
+        }
+
+        mongo.db.comics.insert({"created_by": session["user"]})
+        return render_template(url_for(
+            "profile.html"), user_comics=user_comics)
 
 
 if __name__ == "__main__":
