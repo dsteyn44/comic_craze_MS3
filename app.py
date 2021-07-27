@@ -141,7 +141,7 @@ def add_comics():
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
 
-
+# Add edit decorator for comics
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 def edit_comic(comic_id):
     if request.method == "POST":
@@ -162,6 +162,13 @@ def edit_comic(comic_id):
     comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("edit_comics.html", comic=comic, grades=grades)
+
+@app.route("/delet_comic/<comic_id>")    
+def delete_comic(comic_id):
+    mongo.db.comics.remove({"_id": ObjectId(comic_id)})
+    flash("And don't come back again, Evil Fiend!!")
+    return redirect(url_for("get_comics"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
