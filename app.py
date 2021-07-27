@@ -17,7 +17,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# adding route to home page
+
+# ----------------------------------------adding route to home page
 @app.route("/")
 @app.route("/home")
 def home():
@@ -31,6 +32,14 @@ def get_comics():
     comics = list(mongo.db.comics.find())
     return render_template("comics.html", comics=comics)
 
+
+@app.route("/")
+@app.route("/collect_comics")
+def add_profile():
+    comics_books = list(mongo.db.comics.find())
+    return render_template("profile.html", comics=comics_books)
+
+
 # search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -40,7 +49,8 @@ def search():
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
     return render_template("comics.html", comics=comics)
 
-# Our sign-up page
+
+# -----------------------------------------------Our sign-up page
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -69,7 +79,7 @@ def register():
 
     return render_template("signup.html")
 
-# build login functionality
+# ---------------------------------build login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -98,7 +108,7 @@ def login():
 
     return render_template("signin.html")
 
-# Creating profile function
+# ---------------------------------------------Creating profile function
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -110,11 +120,12 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+
 # log out session
 @app.route("/logout")
 def logout():
     # remove session cookies
-    flash("Sad to see you go {}".format(
+    flash("Sad to see you go! {}".format(
                             request.form.get("username")))
     session.pop("user")
     return redirect(url_for("login"))
@@ -141,6 +152,7 @@ def add_comics():
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
 
+
 # Add edit decorator for comics
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 def edit_comic(comic_id):
@@ -163,7 +175,9 @@ def edit_comic(comic_id):
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("edit_comics.html", comic=comic, grades=grades)
 
-@app.route("/delet_comic/<comic_id>")    
+
+# ---------------------------------------------------------------------Adding delete function for comics in comic.html
+@app.route("/delete_comic/<comic_id>")    
 def delete_comic(comic_id):
     mongo.db.comics.remove({"_id": ObjectId(comic_id)})
     flash("And don't come back again, Evil Fiend!!")
