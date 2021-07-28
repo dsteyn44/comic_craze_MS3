@@ -9,13 +9,13 @@
 }
 
 /*--Prallax container heightfrom materialize--*/
-.parallax {
-    height: 300px;
+.parallax-container {
+    height: 400px;
 }
 
-.parallax-container {
-    height: 65vh;
-  }
+.parallax-lower {
+    margin-top: 35px;
+}
 
   .section .container {
       height: 100px;
@@ -30,6 +30,7 @@
   
   .card-panel {
       border-radius: 10px;
+      margin: 10px;
   }
 
   .card-text {
@@ -37,7 +38,14 @@
       font-size: 50px;
   }
   /*--card in comics--*/
+  .bg-image {
+      background: url("https://www.slashgear.com/wp-content/uploads/2020/04/comic_books_marvel_main_pixa-1280x720.jpgrgba") rgba(11, 30, 204, 0.6);
+  }
   
+  div.card-panel.search-cd-size {
+    height: 100px;
+  }
+
   .card-image.waves-effect.waves-block.waves-light {
      max-width: 10em;
      max-height: 15em;

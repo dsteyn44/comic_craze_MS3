@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block home %}
 
 <!--Added card from Materialize-->
 
@@ -13,12 +13,53 @@
   <div class="row container ">
     <div class="center card-text">Welcome Superhero!
     </div>
-    <p class="grey-text text-darken-3 card-text">During thgese dark times of non-digital </p>
+    <p class="grey-text text-darken-3 card-text"> </p>
   </div>
+  <!---Top 4 best -->
   <div class="row container ">
     <div class="center card-text">Welcome Superhero!
+      <p class="grey-text text-darken-3 card-text">During thgese dark times of non-digital </p>
+<!---Top 4 card-->
+<div class="container">
+  <div class="row">
+    {% for grades in grades %}
+    <div class="col s12 m4 center-align">
+      <div class="card #ffff00 yellow accent-2">
+        <div class="card-image waves-effect waves-block waves-light center-align">
+          {% if not grades.cover_image or comic.cover_image == "" %}
+          <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
+          {% else %}
+          <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
+          {% endif %}
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+            <p class="card-text"><strong>{{ comic.superhero }}</strong></p>
+            <p><small>{{ comic.title }}</small></p>
+            <p><small>Rating: {{ comic.grade_star }}</small></p>
+            <i class="fas fa-info-circle"></i>
+            <i class="fas fa-caret-down"></i>
+          </span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
+              class="material-icons right">close</i>
+          </span>
+          <span>
+            <p class="left cd-margin">Author: {{ comic.author }}</p><br>
+            <p class="left cd-margin">Date Released: {{ comic.date_released }}</p><br>
+            <p class="left cd-margin">Publisher: {{ comic.publisher }}</p><br>
+            <p class="left cd-margin">Comment: {{ comic.comment }}</p><br>
+          </span>
+        </div>
+      </div>
     </div>
-    <p class="grey-text text-darken-3 card-text">During thgese dark times of non-digital </p>
+    {% endfor %}
+  </div>
+</div>
+
+<!---End -->
+    </div>
   </div>
 </div>
 <div class="parallax-container mask" style="background-color: rgba(11, 30, 204, 0.6)">

@@ -60,8 +60,16 @@
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
-    <div class="row flashes">
-      <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+    <!-- Modal Trigger -->
+    <div class="row #1a237e indigo darken-4">
+      <div class="center col s12 m6">
+        <div class="card-small blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Kapow!</span>
+            <p>{{ message }}</p>
+          </div>
+        </div>
+      </div>
     </div>
     {% endfor %}
     {% endif %}
@@ -69,14 +77,14 @@
   </section>
   <div>
     {% block home %}
-    {% endblock %}
+      {% endblock %}
   </div>
-  <main>
-    {% block content %}
+  <main class="bg-image">
+    {% block content%}
     {% endblock %}
   </main>
   <!--footer from Material Bootstrap-->
-    <footer class="bg-danger text-center center-align text-white" style="background-color: #3b5998;">
+    <footer class="bg-danger text-center center-align text-white">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
         <!-- Section: Social media -->

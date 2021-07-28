@@ -42,7 +42,6 @@ def search():
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
     return render_template("comics.html", comics=comics)
 
-
 # ---Our sign-up page---
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -129,7 +128,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remove session cookies
-    flash("Sad to see you go! {}".format(
+    flash("Sad to see you go!".format(
                             request.form.get("username")))
     session.pop("user")
     return redirect(url_for("login"))
@@ -229,11 +228,20 @@ def edit_category(category_id):
     category = mongo.db.catagories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+# ---delete Categories--
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.catagories.remove({"_id": ObjectId(category_id)})
     flash("Be gone Evil Fiend!!")
     return redirect(url_for("get_categories"))
+
+
+# ---Rating chart---
+@app.route("/get_comics")
+def get_comics():
+    grades = list(mongo.db.comics.find().sort("grades", -1).limit(4))
+    return render_template('home.html', grades=grades)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

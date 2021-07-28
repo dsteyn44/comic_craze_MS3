@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $('.carousel').carousel();
     $('.sidenav').sidenav();
     $('.parallax').parallax();
     $('.dropdown-trigger').dropdown();

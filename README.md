@@ -2,7 +2,9 @@
 
 [View the live project here.](https://codeinstitute.net)
 
-This is the main marketing website for Code Institute. It is designed to be responsibe and accessible on a range of devices, making it easy to navigate for potential students and partners.
+Kapow Comic Collection is a hub where comic collectors can add the data of  recent comics they have read or actually have in their possession such as rare types. Users will be able to subscribe to their own profile page with a collection of the comics they enjoy or have read; perhaps they wish to keep  and that also a where they can add in new comics. Also they will be able to edit any of the comics on the website they see fit. will find a data base to other other websites. As more users subscribe so the database will increase. Links will be added to eBay or a website where they can purchase the comics. 
+
+Eventually the site will extend to include to some extra features such as: a blog, a fan page that extends to social network. 
 
 <h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
 
