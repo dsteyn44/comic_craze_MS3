@@ -106,7 +106,7 @@ def login():
 # ---Creating profile function---
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-     # Users can access only
+    # Users can access only
     if not session.get("user"):
         return render_template("error_handlers/404.html")
     # grab the session user's username from db
@@ -229,6 +229,11 @@ def edit_category(category_id):
     category = mongo.db.catagories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.catagories.remove({"_id": ObjectId(category_id)})
+    flash("Be gone Evil Fiend!!")
+    return redirect(url_for("get_categories"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
