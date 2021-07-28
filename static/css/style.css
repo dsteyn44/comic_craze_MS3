@@ -9,14 +9,19 @@
 }
 
 /*--Prallax container heightfrom materialize--*/
+.parallax {
+    height: 300px;
+}
+
 .parallax-container {
-    height: 75vh;
+    height: 65vh;
   }
 
-  .section {
+  .section .container {
       height: 100px;
       margin-top: 100px;
   }
+
 
   .horizontal {
       height: 50px;

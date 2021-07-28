@@ -7,7 +7,7 @@
     <div class="col s12 m8 offset-m2">
         <div class="card-panel">
             <h3 class="center-align light-blue-text text-darken-4">
-                {{ username }}'s Profile
+                {{ username|upper }}'s Profile
             </h3>
         </div>
     </div>
@@ -32,7 +32,11 @@
                             <p><small>Rating: {{ comics.grade_star }}</small></p>
                             <i class="fas fa-info-circle"></i>
                             <i class="fas fa-caret-down"></i>
-                            <!--editing only to be permitted by user-->
+                            <!--editing only to be permitted by user for their added comic-->
+                            {% if session.user|lower == comics.created_by|lower %}
+                            <a href="{{ url_for('delete_comic', comic_id=comics._id) }}" class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                            <a href="{{ url_for('edit_comic', comic_id=comics._id) }}" class="btn-small #00e676 green accent-3">Edit</a>
+                            {% endif %}
                         </span>
                     </div>
                     <div class="card-reveal">

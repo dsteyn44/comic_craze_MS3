@@ -43,7 +43,7 @@ def search():
     return render_template("comics.html", comics=comics)
 
 
-# -----------------------------------------------Our sign-up page
+# ---Our sign-up page---
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -73,7 +73,7 @@ def register():
     return render_template("signup.html")
 
 
-# ---------------------------------build login functionality
+# ---build login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -103,7 +103,7 @@ def login():
     return render_template("signin.html")
 
 
-# ---------------------------------------------Creating profile function
+# ---Creating profile function---
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
      # Users can access only
@@ -137,7 +137,7 @@ def logout():
 
 # Build the POST method
 @app.route("/add_comics", methods=["GET", "POST"])
-def add_comics(comic_id):
+def add_comics():
     if not session.get("user"):
         return render_template("error_handlers/404.html")
 
@@ -151,6 +151,7 @@ def add_comics(comic_id):
             "publisher": request.form.get("publisher"),
             "cover_image": request.form.get("cover_image"),
             "comment": request.form.get("comment"),
+            "created_by": session["user"]
             }
 
         mongo.db.comics.insert_one(ad_comic)
@@ -185,34 +186,13 @@ def edit_comic(comic_id):
     return render_template("edit_comics.html", comic=comic, grades=grades)
 
 
-# ---------------------------------------------------------------------Adding delete function for comics in comic.html
+# ---Adding delete function for comics in comic.html---
 @app.route("/delete_comic/<comic_id>")
 def delete_comic(comic_id):
     mongo.db.comics.remove({"_id": ObjectId(comic_id)})
     flash("Be gone Evil Fiend!!")
-    return redirect(url_for("get_comics"))
+    return redirect(url_for("profile", username=session['user']))
 
-
-@app.route("/insert_comic/<comic_id>", methods=["GET", "POST"])
-def insert_comic(comic_id):
-    if request.method == "POST":
-        submit = {
-            "superhero": request.form.get("superhero"),
-            "author": request.form.get("author"),
-            "date_released": request.form.get("date_released"),
-            "title": request.form.get("title"),
-            "grade_star": request.form.get("grade_star"),
-            "publisher": request.form.get("publisher"),
-            "cover_image": request.form.get("cover_image"),
-            "comment": request.form.get("comment"),
-            }
-
-        mongo.db.comics.update({"_id": ObjectId(comic_id)}, submit)
-        flash("Task Successfully Updated")
-
-    comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
-    grades = mongo.db.grades.find().sort("grade_star", 1)
-    return render_template("edit_comics.html", comic=comic, grades=grades)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
