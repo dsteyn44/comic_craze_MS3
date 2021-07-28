@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<!--Icon prefix from materialize-->
+<h3 class="light-blue-text text-darken-4 center-align">Add Category</h3>
+<div class="row">
+    <form class="card-panel col s12 m8 offset-m2 center-align" method="POST" action="{{ url_for('add_categories') }}">
+        <!--Category name-->
+        <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix light-blue-text text-darken-4">stars</i>
+                <input id="category_name" name="category_name" type="text" minlength="3" maxlength="25"
+                    pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" class="validate" required>
+                <label for="category_name">Category name</label>
+            </div>
+        </div>
+        <!--submit button-->
+        <div class="row">
+            <button class="btn #01579b light-blue darken-4 center-align waves-effect waves-light" type="submit">Add
+                Category
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

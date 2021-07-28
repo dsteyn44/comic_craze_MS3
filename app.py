@@ -194,10 +194,24 @@ def delete_comic(comic_id):
     return redirect(url_for("get_comics"))
 
 
+# ---Get Categories function---
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.catagories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+@app.route("/add_categories", methods=["GET", "POST"])
+def add_categories():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.catagories.insert_one(category)
+        flash("New Superhero Added!")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_categories.html")
 
 
 if __name__ == "__main__":
