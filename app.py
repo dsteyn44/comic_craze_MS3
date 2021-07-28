@@ -191,7 +191,13 @@ def edit_comic(comic_id):
 def delete_comic(comic_id):
     mongo.db.comics.remove({"_id": ObjectId(comic_id)})
     flash("Be gone Evil Fiend!!")
-    return redirect(url_for("profile", username=session['user']))
+    return redirect(url_for("get_comics"))
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.catagories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
 
 
 if __name__ == "__main__":
