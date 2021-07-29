@@ -6,59 +6,68 @@
 
 <div class="parallax-container mask" style="background-color: rgba(11, 30, 204, 0.6)">
   <div class="parallax"><img
-      src="https://www.slashgear.com/wp-content/uploads/2020/04/comic_books_marvel_main_pixa-1280x720.jpg">
+      src="https://www.slashgear.com/wp-content/uploads/2020/04/comic_books_marvel_main_pixa-1280x720.jpg" alt="background image">
   </div>
 </div>
 <!---section that has the card-->
-<div class="section #ffff00 yellow accent-2 center-align">
-  <div class="row container ">
-    <div class="center card-text">Welcome Superhero!
-    <!---Top 4 best -->
-        <div class="container center">
-          <div class="row">
-                  {% for grade in grades %}
-            <div class="col s12 m3 center-align">
-              <div class="card #ffff00 yellow accent-2">
-                <div class="card-image waves-effect waves-block waves-light center-align">
-                  {% if not grade.cover_image or grade.cover_image == "" %}
-                  <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
-                  {% else %}
-                  <img class="activator " src="{{ grade.cover_image }}" alt="cover image">
-                  {% endif %}
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">
-                    <p class="card-text"><strong>{{ grade.superhero }}</strong></p>
-                    <p><small>{{ grade.title }}</small></p>
-                    <p><small>Rating: {{ grade.grade_star }}</small></p>
-                    <i class="fas fa-info-circle"></i>
-                    <i class="fas fa-caret-down"></i>
-                  </span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">{{ grade.superhero }}<i
-                      class="material-icons right">close</i>
-                  </span>
-                  <span>
-                    <p class="left cd-margin">Author: {{ grade.author }}</p><br>
-                    <p class="left cd-margin">Date Released: {{ grade.date_released }}</p><br>
-                    <p class="left cd-margin">Publisher: {{ grade.publisher }}</p><br>
-                    <p class="left cd-margin">Comment: {{ grade.comment }}</p><br>
-                  </span>
-                </div>
+<div class=" #e53935 red darken-1 center-align">
+  <div class="row container " style="margin-bottom: 0px;">
+    <div class="center card-text">
+      <h2 style="
+    margin-top: 0px;
+    border-top-width: 40px;
+    padding-top: 20px;
+    margin-bottom: 0px;">Welcome Superhero!</h2>
+      <p>This is Kapow! Comic Collection. A fun hub that you, the Superhero, can access comics to share, add and
+        commment.<br> on Superhero Comics</p>
+      <!---Top 4 best -->
+      <div class="container center" style="max-width: 100%;">
+        <div class="row">
+          {% for grade in grades %}
+          <div class="col s12 m3 l3 center-align">
+            <div class="card #ffff00 yellow accent-2">
+              <div class="card-image waves-effect waves-block waves-light center-align">
+                {% if not grade.cover_image or grade.cover_image == "" %}
+                <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
+                {% else %}
+                <img class="activator " src="{{ grade.cover_image }}" alt="cover image">
+                {% endif %}
+              </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                  <p class="card-text"><strong>{{ grade.superhero }}</strong></p>
+                  <p><small>{{ grade.title }}</small></p>
+                  <p><small>Rating: {{ grade.grade_star }}</small></p>
+                  <i class="fas fa-info-circle"></i>
+                  <i class="fas fa-caret-down"></i>
+                </span>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ grade.superhero }}<i
+                    class="material-icons right">close</i>
+                </span>
+                <span>
+                  <ul>
+                  <li class="left cd-margin">Author: {{ grade.author }}</li>
+                  <li class="left cd-margin">Date Released: {{ grade.date_released }}</li>
+                  <li class="left cd-margin">Publisher: {{ grade.publisher }}</li>
+                  <li class="left cd-margin">Comment: {{ grade.comment }}</li>
+                  </ul>
+                </span>
               </div>
             </div>
-            {% endfor %}
           </div>
+          {% endfor %}
         </div>
-      <!---End -->
       </div>
+      <!---End -->
     </div>
   </div>
 </div>
+</div>
 <div class="parallax-container mask" style="background-color: rgba(11, 30, 204, 0.6)">
   <div class="parallax"><img
-      src="https://www.mercurynews.com/wp-content/uploads/2021/01/SJM-L-PIZARRO-COL-0122-01.jpeg">
+      src="https://www.mercurynews.com/wp-content/uploads/2021/01/SJM-L-PIZARRO-COL-0122-01.jpeg" alt="background image">
   </div>
-</div>
+  </div>
 {% endblock %}

@@ -18,7 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# ----------------------------------------adding route to home page
+# ---adding route to home page incl. template
 @app.route("/")
 @app.route("/home")
 def home():
@@ -26,7 +26,7 @@ def home():
     return render_template('home.html', grades=grades)
 
 
-# adding the decorator that includes a route to function
+# ---Adding the route decorator for comics
 @app.route("/")
 @app.route("/get_comics")
 def get_comics():
@@ -34,7 +34,7 @@ def get_comics():
     return render_template("comics.html", comics=comics)
 
 
-# search function
+# ---Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -42,6 +42,7 @@ def search():
         "title", "text")])
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
     return render_template("comics.html", comics=comics)
+
 
 # ---Our sign-up page---
 @app.route("/register", methods=["GET", "POST"])
@@ -85,10 +86,10 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
                             "profile", username=session["user"]))
             else:
                 # invalid password match
@@ -125,17 +126,19 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+
+
+# ---Log out session---
 # log out session
 @app.route("/logout")
 def logout():
-    # remove session cookies
-    flash("Sad to see you go!".format(
-                            request.form.get("username")))
+    # remove user from session cookie
+    flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
 
-# Build the POST method
+# ---Adding Comics---
 @app.route("/add_comics", methods=["GET", "POST"])
 def add_comics():
     if not session.get("user"):
@@ -158,12 +161,12 @@ def add_comics():
         flash("Comic Successfully Added")
         return redirect(url_for("profile", username=session['user']))
 
-# Add rating/grader for cards
+# ---Add rating/grader for cards---
     grades = mongo.db.grades.find().sort("grade_star", 1)
     return render_template("add_comics.html", grades=grades)
 
 
-# Add edit decorator for comics
+# ---Add edit decorator for comics---
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 def edit_comic(comic_id):
     if request.method == "POST":
@@ -228,6 +231,7 @@ def edit_category(category_id):
 
     category = mongo.db.catagories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
 
 # ---delete Categories--
 @app.route("/delete_category/<category_id>")
