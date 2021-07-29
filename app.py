@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    grades = list(mongo.db.comics.find().sort("grades", -1).limit(4))
+    return render_template('home.html', grades=grades)
 
 
 # adding the decorator that includes a route to function
@@ -234,13 +235,6 @@ def delete_category(category_id):
     mongo.db.catagories.remove({"_id": ObjectId(category_id)})
     flash("Be gone Evil Fiend!!")
     return redirect(url_for("get_categories"))
-
-
-# ---Rating chart---
-@app.route("/get_comics")
-def get_comics():
-    grades = list(mongo.db.comics.find().sort("grades", -1).limit(4))
-    return render_template('home.html', grades=grades)
 
 
 if __name__ == "__main__":

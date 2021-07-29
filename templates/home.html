@@ -9,56 +9,50 @@
       src="https://www.slashgear.com/wp-content/uploads/2020/04/comic_books_marvel_main_pixa-1280x720.jpg">
   </div>
 </div>
+<!---section that has the card-->
 <div class="section #ffff00 yellow accent-2 center-align">
   <div class="row container ">
     <div class="center card-text">Welcome Superhero!
-    </div>
-    <p class="grey-text text-darken-3 card-text"> </p>
-  </div>
-  <!---Top 4 best -->
-  <div class="row container ">
-    <div class="center card-text">Welcome Superhero!
-      <p class="grey-text text-darken-3 card-text">During thgese dark times of non-digital </p>
-<!---Top 4 card-->
-<div class="container">
-  <div class="row">
-    {% for grades in grades %}
-    <div class="col s12 m4 center-align">
-      <div class="card #ffff00 yellow accent-2">
-        <div class="card-image waves-effect waves-block waves-light center-align">
-          {% if not grades.cover_image or comic.cover_image == "" %}
-          <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
-          {% else %}
-          <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
-          {% endif %}
+    <!---Top 4 best -->
+        <div class="container center">
+          <div class="row">
+                  {% for grade in grades %}
+            <div class="col s12 m3 center-align">
+              <div class="card #ffff00 yellow accent-2">
+                <div class="card-image waves-effect waves-block waves-light center-align">
+                  {% if not grade.cover_image or grade.cover_image == "" %}
+                  <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
+                  {% else %}
+                  <img class="activator " src="{{ grade.cover_image }}" alt="cover image">
+                  {% endif %}
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">
+                    <p class="card-text"><strong>{{ grade.superhero }}</strong></p>
+                    <p><small>{{ grade.title }}</small></p>
+                    <p><small>Rating: {{ grade.grade_star }}</small></p>
+                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-caret-down"></i>
+                  </span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">{{ grade.superhero }}<i
+                      class="material-icons right">close</i>
+                  </span>
+                  <span>
+                    <p class="left cd-margin">Author: {{ grade.author }}</p><br>
+                    <p class="left cd-margin">Date Released: {{ grade.date_released }}</p><br>
+                    <p class="left cd-margin">Publisher: {{ grade.publisher }}</p><br>
+                    <p class="left cd-margin">Comment: {{ grade.comment }}</p><br>
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">
-            <p class="card-text"><strong>{{ comic.superhero }}</strong></p>
-            <p><small>{{ comic.title }}</small></p>
-            <p><small>Rating: {{ comic.grade_star }}</small></p>
-            <i class="fas fa-info-circle"></i>
-            <i class="fas fa-caret-down"></i>
-          </span>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
-              class="material-icons right">close</i>
-          </span>
-          <span>
-            <p class="left cd-margin">Author: {{ comic.author }}</p><br>
-            <p class="left cd-margin">Date Released: {{ comic.date_released }}</p><br>
-            <p class="left cd-margin">Publisher: {{ comic.publisher }}</p><br>
-            <p class="left cd-margin">Comment: {{ comic.comment }}</p><br>
-          </span>
-        </div>
+      <!---End -->
       </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-
-<!---End -->
     </div>
   </div>
 </div>
