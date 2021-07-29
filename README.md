@@ -1,10 +1,10 @@
-<h1 align="center">Code Institute Website</h1>
+<h1 align="center">Kapow! Comic Collection</h1>
 
-[View the live project here.](https://codeinstitute.net)
+[View the live project here.](https://kapow-comics.herokuapp.com/)
 
 Kapow Comic Collection is a hub where comic collectors can add the data of  recent comics they have read or actually have in their possession such as rare types. Users will be able to subscribe to their own profile page with a collection of the comics they enjoy or have read; perhaps they wish to keep  and that also a where they can add in new comics. Also they will be able to edit any of the comics on the website they see fit. will find a data base to other other websites. As more users subscribe so the database will increase. Links will be added to eBay or a website where they can purchase the comics. 
 
-Eventually the site will extend to include to some extra features such as: a blog, a fan page that extends to social network. 
+Eventually the site will extend to include to some extra features such as: a blog, a fan page that extends to social network. A database of Superheroes will also be included.
 
 <h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
 
@@ -31,7 +31,7 @@ Eventually the site will extend to include to some extra features such as: a blo
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are Code Insititue red, and white.
+        -   I have kept top a comic theme of bright colors echoing the comics 
     -   #### Typography
         -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
     -   #### Imagery
@@ -59,6 +59,8 @@ Eventually the site will extend to include to some extra features such as: a blo
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Python](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JQuery]https://jquery.com/
+-   [Javascript]https://jquery.com/-
+
 ### Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
@@ -83,7 +85,7 @@ Eventually the site will extend to include to some extra features such as: a blo
     - RandomKeygen was used to create a random password (https://github.com/) during the coding process.
 1. [Freepik:](https://www.freepik.com/home/)
     - Freepik is a library of free images.
-1. [Material Bootstrap] (https://mdbootstrap.com/)
+1. [Material Bootstrap:](https://mdbootstrap.com/)
     - Material bootstrap is 
 ## Testing
 
@@ -91,6 +93,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+-   
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -213,6 +216,14 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+### Creating a MongoDb account and collection and wiring it up
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
 
 ## Credits
 
