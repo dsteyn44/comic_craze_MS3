@@ -121,8 +121,12 @@ def profile(username):
             # Comics are only available to user
             user_comics = list(
                 mongo.db.comics.find({"created_by": session["user"]}))
+            favorite = list(mongo.db.tags.find(
+                {"created_by": username}))
         return render_template(
-            "profile.html", username=username, user_comics=user_comics)
+            "profile.html", username=username,
+            user_comics=user_comics,
+            favorite=favorite)
     return redirect(url_for("login"))
 
 
@@ -136,6 +140,15 @@ def tag_favorite(comic_id):
         tag = {
             "user": user["_id"],
             "comic_id": comic["_id"],
+            "superhero": comic["superhero"],
+            "author": comic["author"],
+            "date_released": comic["date_released"],
+            "title": comic["title"],
+            "grade_star": comic["grade_star"],
+            "publisher": comic["publisher"],
+            "cover_image": comic["cover_image"],
+            "comment": comic["comment"],
+            "created_by": session["user"]
         }
 
     mongo.db.tags.insert_one(tag)

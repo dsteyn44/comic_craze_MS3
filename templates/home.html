@@ -26,7 +26,7 @@
           <div>This is your top 4 rated comics!</div>
           {% for grade in grades %}
           <div class="col s12 m3 l3 center-align">
-            <div class="card #ffff00 yellow accent-2">
+            <div class="card #ffff00 yellow accent-2 z-depth-3">
               <div class="card-image waves-effect waves-block waves-light center-align">
                 {% if not grade.cover_image or grade.cover_image == "" %}
                 <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">

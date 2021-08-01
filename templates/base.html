@@ -64,10 +64,11 @@
     {% if messages %}
     {% for message in messages %}
     <!-- Modal Trigger -->
-    <div class="row #1a237e indigo darken-4">
-      <div class="center col s12 m6">
-        <div class="card-small blue-grey darken-1">
-          <div class="card-content white-text">
+    <div class="row">
+      <div class="center col s12">
+        <div class="card-large #b71c1c red darken-4" style="margin-top: 14px,">
+          <div class="card-content text-center white-text center-align">
+            <i class="fas fa-exclamation-triangle"></i>
             <span class="card-title">Kapow!</span>
             <p>{{ message }}</p>
           </div>

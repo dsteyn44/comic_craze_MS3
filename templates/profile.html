@@ -27,15 +27,19 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">
-                            <p class="card-text"><strong>{{ comics.superhero }}</strong></p>
-                            <p><small>{{ comics.title }}</small></p>
-                            <p><small>Rating: {{ comics.grade_star }}</small></p>
+                            <ul>
+                                <li class="card-text"><strong>{{ comics.superhero }}</strong></li>
+                                <li><small>{{ comics.title }}</small></li>
+                                <li><small>Rating: {{ comics.grade_star }}</small></li>
+                            </ul>
                             <i class="fas fa-info-circle"></i>
                             <i class="fas fa-caret-down"></i>
                             <!--editing only to be permitted by user for their added comic-->
                             {% if session.user|lower == comics.created_by|lower %}
-                            <a href="{{ url_for('delete_comic', comic_id=comics._id) }}" class="btn-small #ff1744 red accent-3">Goodbye!</a>
-                            <a href="{{ url_for('edit_comic', comic_id=comics._id) }}" class="btn-small #00e676 green accent-3">Edit</a>
+                            <a href="{{ url_for('delete_comic', comic_id=comics._id) }}"
+                                class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                            <a href="{{ url_for('edit_comic', comic_id=comics._id) }}"
+                                class="btn-small #00e676 green accent-3">Edit</a>
                             {% endif %}
                         </span>
                     </div>
@@ -53,13 +57,60 @@
                 </div>
             </div>
             {% endfor %}
-            <!---all for -->
+            <!---Tags for Users Favorites -->
+            <div class="container">
             <div class="row">
-                <div class="col s12 m6 center center-align">
-                    
+               <div class="col s12">
+                <h2>My Favorite Comics!!</h2>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+                {% for fav in favorite %}
+                <div class="col s12 m4 center-align">
+                    <div class="card #1de9b6 teal accent-3">
+                        <div class="card-image waves-effect waves-block waves-light center-align">
+                            {% if not fav.cover_image or fav.cover_image == "" %}
+                            <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
+                            {% else %}
+                            <img class="activator " src="{{ fav.cover_image }}" alt="cover image">
+                            {% endif %}
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                                <ul>
+                                    <li class="card-text"><strong>{{ fav.superhero }}</strong></li>
+                                    <li><small>{{ fav.title }}</small></li>
+                                    <li><small>Rating: {{ fav.grade_star }}</small></li>
+                                </ul>
+                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-caret-down"></i>
+                                <!--editing only to be permitted by user for their added comic-->
+                                {% if session.user|lower == fav.created_by|lower %}
+                                <a href="{{ url_for('delete_comic', comic_id=fav._id) }}"
+                                    class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                                <a href="{{ url_for('edit_comic', comic_id=fav._id) }}"
+                                    class="btn-small #00e676 green accent-3">Edit</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{ fav.superhero }}<i
+                                    class="material-icons right">close</i>
+                            </span>
+                            <span>
+                                <div class="left cd-margin">Author: {{ fav.author }}</div><br>
+                                <div class="left cd-margin">Date Released: {{ fav.date_released }}</div><br>
+                                <div class="left cd-margin">Publisher: {{ fav.publisher }}</div><br>
+                                <div class="left cd-margin">Comment: {{ fav.comment }}</div><br>
+                            </span>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
