@@ -31,9 +31,12 @@ Eventually the site will extend to include to some extra features such as: a blo
 
 -   ### Design
     -   #### Colour Scheme
-        -   I have kept top a comic theme of bright colors echoing the comics 
+        I have kept top a comic theme of bright colors echoing the comics from yesteryear and following a Roy Lichtenstein design feel.
+        - 
+
     -   #### Typography
-        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+        In regrads to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
+        - 
     -   #### Imagery
         -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
@@ -217,7 +220,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-### Creating a MongoDb account and collection and wiring it up
+### Creating a MongoDgit commit -m "b account and collection and wiring it up
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 

@@ -125,6 +125,8 @@ def profile(username):
             "profile.html", username=username, user_comics=user_comics)
     return redirect(url_for("login"))
 
+# favorites tagon picture
+@app.route("/profile")
 
 
 
