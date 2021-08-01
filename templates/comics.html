@@ -49,32 +49,33 @@
                     <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
                     {% endif %}
                 </div>
+                <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}" class="btn-floating btn-large waves-effect waves-light red"><i class="fas fa-star"></i></a>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                        <p class="card-text"><strong>{{ comic.superhero }}</strong></p>
-                        <p><small>{{ comic.title }}</small></p>
-                        <p><small>Rating: {{ comic.grade_star }}</small></p>
+                    <ul class="card-title activator grey-text text-darken-4">
+                        <li class="card-text"><strong>{{ comic.superhero }}</strong></li>
+                        <li><small>{{ comic.title }}</small></li>
+                        <li><small>Rating: {{ comic.grade_star }}</small></li>
+
                         <i class="fas fa-info-circle"></i>
                         <i class="fas fa-caret-down"></i>
-                        {% if session.user|lower == comic.created_by|lower %}
-                        <!--editing only to be permitted by user-->
-                        <a href="{{ url_for('delete_comic', comic_id=comic._id) }}"
-                            class="btn-small #ff1744 red accent-3">Goodbye!</a>
-                        <a href="{{ url_for('edit_comic', comic_id=comic._id) }}"
-                            class="btn-small #00e676 green accent-3">Edit</a>
-                        {% endif %}
+                        
                     </span>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
                             class="material-icons right">close</i>
                     </span>
-                    <span>
-                        <p class="left cd-margin">Author: {{ comic.author }}</p><br>
-                        <p class="left cd-margin">Date Released: {{ comic.date_released }}</p><br>
-                        <p class="left cd-margin">Publisher: {{ comic.publisher }}</p><br>
-                        <p class="left cd-margin">Comment: {{ comic.comment }}</p><br>
-                    </span>
+                    <ul>
+                        <li class="left cd-margin">Author: {{ comic.author }}</li><br>
+                        <li class="left cd-margin">Date Released: {{ comic.date_released }}</li><br>
+                        <li class="left cd-margin">Publisher: {{ comic.publisher }}</li><br>
+                        <li class="left cd-margin">Comment: {{ comic.comment }}</li><br>
+                    </ul>
+                    {% if session.user|lower == comic.created_by|lower %}
+                    <!--editing only to be permitted by user-->
+                    <a href="{{ url_for('delete_comic', comic_id=comic._id) }}" class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                    <a href="{{ url_for('edit_comic', comic_id=comic._id) }}" class="btn-small #00e676 green accent-3">Edit</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

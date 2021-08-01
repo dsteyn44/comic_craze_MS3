@@ -125,13 +125,24 @@ def profile(username):
             "profile.html", username=username, user_comics=user_comics)
     return redirect(url_for("login"))
 
-# favorites tagon picture
-@app.route("/profile")
+
+# favorites tag on comics for user in Profile
+@app.route("/tag_favorite/<comic_id>")
+def tag_favorite(comic_id):
+    # grabbing the session user
+    if session.get("user"):
+        user = mongo.db.users.find_one({"username": session["user"]})
+        comic = mongo.db.comics.find_one({"_id": ObjectId(comic_id)})
+        tag = {
+            "user": user["_id"],
+            "comic_id": comic["_id"],
+        }
+
+    mongo.db.tags.insert_one(tag)
+    return redirect(url_for('get_comics'))
 
 
-
-# ---Log out session---
-# log out session
+# ---Log out session--
 @app.route("/logout")
 def logout():
     # remove user from session cookie
