@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
-            <h1>Category</h1>
-
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('add_categories') }}" class="btn-large light-blue">Add category <i class="fas fa-plus-square right"></i>
-                    </a>
-                </div>
-            </div>
-
-    <div class="grid-example col s12 center-align"><span class="flow-text">
-            <p>This is our comic book collection for you see.</p>
-        </span>
+<h1 class="logo-text center" style="margin-top: 0px; margin-bottom: 0px; padding-top: 20px; padding-bottom: 20px;">Category</h1>
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_categories') }}" class="btn-large light-blue">Add category <i
+                class="fas fa-plus-square right"></i>
+        </a>
     </div>
+</div>
+
+<div class="grid-example col s12 center-align"><span class="flow-text">
+        <p>This is our comic book collection for you see.</p>
+    </span>
+</div>
 </div>
 <div class="row">
     {% for category in categories %}
@@ -22,9 +21,13 @@
             <div class="card-content white-text">
                 <span class="card-title">{{ category.category_name }}</span>
             </div>
+            <div class="card-image">
+                <img src="https://i.annihil.us/u/prod/marvel/i/mg/8/04/5ced997c7ccd9/clean.jpg" alt="Superhero image">
+            </div>
             <div class="card-action">
-                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green accent-4">Edit</a>
-                <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn light-blue lighten-1">Delete</a>
+                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn small green accent-4">Edit</a>
+                <a href="{{ url_for('delete_category', category_id=category._id) }}"
+                    class="btn smalllight-blue lighten-1">Delete</a>
             </div>
         </div>
     </div>
