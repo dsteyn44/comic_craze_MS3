@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    grades = list(mongo.db.comics.find().sort("grades", -1).limit(4))
+    grades = list(mongo.db.comics.find().sort("grades", -1).limit(3))
     return render_template('home.html', grades=grades)
 
 
