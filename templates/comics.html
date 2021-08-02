@@ -38,7 +38,7 @@
 <!--Comic section-->
 <!--container and card taken from materialize-followed the minitask project-->
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
         {% for comic in comics %}
         <div class="col s12 m4 center-align">
             <div class="card hoverable #ffc107 amber" style="min-height: 500px;">
@@ -57,10 +57,12 @@
                 </div>
                 <div class="card-content" style="padding-top: 0px;">
                     <span class="card-title activator grey-text text-darken-4">
-                        <i class="fas fa-info-circle blue-text small"></i>
-                        <ul>
+                        <i class="fas fa-info-circle blue-text small" style="padding-top: 10px; margin-bottom: 0px;"></i>
+                        <ul style="margin-top: 0px; margin-bottom: 0px;">
                             <li class="card-text"><strong>{{ comic.superhero|upper }}</strong></li>
                             <li><small>{{ comic.title }}</small></li>
+                            <li><small style="font-size: 10px;">Author: {{ comic.author }}</small></li>
+                            <li><small style="font-size: 10px;">Date: {{ comic.date_released }}</small></li>
                             <li><small>Rating: {{ comic.grade_star }}</small></li>
                         </ul>
                 </div>

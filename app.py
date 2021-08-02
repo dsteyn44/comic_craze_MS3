@@ -154,7 +154,7 @@ def tag_favorite(comic_id):
         }
 
     mongo.db.tags.insert_one(tag)
-    return redirect(url_for('get_comics'))
+    return redirect(url_for("profile", username=session['user']))
 
 
 # ---Adding delete function for tags in profile.html---
@@ -171,7 +171,7 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("home"))
 
 
 # ---Adding Comics---

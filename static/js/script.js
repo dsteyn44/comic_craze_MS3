@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('.dropdown-trigger').dropdown();
     $('.tooltipped').tooltip();
     $('.datepicker').datepicker({
-      format: "dd mmmm, yyyy",
+      format: "dd mmm yyyy",
       yearRange: 100,
       showClearBtn: true,
       i18n: {
