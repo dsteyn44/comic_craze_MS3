@@ -253,8 +253,10 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 -   My Mentor Precious for continuous helpful feedback.
 
--   Tutor support at Code Institute for their support.
+-   Tutor support at Code Institute for their support - Fatima, Igor, Jo and John. Thank you for being so patient.
 
 -   My wife Sofia and sons August & Adam for having to put up with me during this course. Love you to the monn and back.
 
+### Disclaimer
 
+This project is for educational purposes only. strictly forbidden for public use. If there is an issue with the copyright or the content, please contact me: d_steyn@yahoo.com.

@@ -18,7 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# ---adding route to home page incl. template
+# ---adding route to home page incl.template for grades---
 @app.route("/")
 @app.route("/home")
 def home():
@@ -26,7 +26,7 @@ def home():
     return render_template('home.html', grades=grades)
 
 
-# ---Adding the route decorator for comics
+# ---Adding the route decorator for comics---
 @app.route("/")
 @app.route("/get_comics")
 def get_comics():
@@ -34,7 +34,7 @@ def get_comics():
     return render_template("comics.html", comics=comics)
 
 
-# ---Search function
+# ---Search function----
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -48,10 +48,10 @@ def search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in db
+
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+    # check if username already exists in db
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -74,7 +74,7 @@ def register():
     return render_template("signup.html")
 
 
-# ---build login functionality
+# ---build login functionality----
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -93,7 +93,7 @@ def login():
                             "profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Password")
                 return redirect(url_for("login"))
 
         else:
@@ -130,7 +130,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-# favorites tag on comics for user in Profile
+# ---favorites tag on comics for user in Profile---
 @app.route("/tag_favorite/<comic_id>")
 def tag_favorite(comic_id):
     # grabbing the session user
@@ -155,7 +155,7 @@ def tag_favorite(comic_id):
     return redirect(url_for('get_comics'))
 
 
-# ---Log out session--
+# ---Log out session---
 @app.route("/logout")
 def logout():
     # remove user from session cookie
