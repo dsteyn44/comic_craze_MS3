@@ -68,7 +68,7 @@
             <div class="row">
                 {% for fav in favorite %}
                 <div class="col s12 m4 center-align">
-                    <div class="card #1de9b6 teal accent-3">
+                    <div class="card #1de9b6 teal accent-3"style="min-height: 500px;">
                         <div class="card-image waves-effect waves-block waves-light center-align">
                             {% if not fav.cover_image or fav.cover_image == "" %}
                             <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
@@ -76,7 +76,7 @@
                             <img class="activator " src="{{ fav.cover_image }}" alt="cover image">
                             {% endif %}
                         </div>
-                        <div class="card-content">
+                        <div class="card-content" style="padding-top: 0px;">
                             <span class="card-title activator grey-text text-darken-4">
                                 <ul>
                                     <li class="card-text"><strong>{{ fav.superhero }}</strong></li>

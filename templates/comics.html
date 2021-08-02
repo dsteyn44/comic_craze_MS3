@@ -41,7 +41,13 @@
     <div class="row">
         {% for comic in comics %}
         <div class="col s12 m4 center-align">
-            <div class="card #ffc107 amber">
+            <div class="card hoverable #ffc107 amber" style="min-height: 500px;">
+                {% if session.user|lower %}
+                <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
+                    class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
+                    data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
+                </span>
+                {% endif %}
                 <div class="card-image waves-effect waves-block waves-light center-align">
                     {% if not comic.cover_image or comic.cover_image == "" %}
                     <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
@@ -49,12 +55,9 @@
                     <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
                     {% endif %}
                 </div>
-                <div class="card-content">
+                <div class="card-content" style="padding-top: 0px;">
                     <span class="card-title activator grey-text text-darken-4">
                         <i class="fas fa-info-circle blue-text small"></i>
-                        <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
-                            class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom" data-tooltip="Add to your Favourite Collection!"><i class="fas fa-star"></i></a>
-                            </span>
                         <ul>
                             <li class="card-text"><strong>{{ comic.superhero|upper }}</strong></li>
                             <li><small>{{ comic.title }}</small></li>
