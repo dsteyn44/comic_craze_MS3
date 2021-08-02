@@ -169,9 +169,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Bug Fix
 
+Backend
 -   Was deploying on Heroku but showed an error pymongo Auth fail. I worked out that my MONGO_URI Connection was incorrect.
-    
+-   Tried to sign in as "admin" but was thrown an error "UnboundLocalError: local variable 'favorite' referenced before assignment". The reason for this was that the "favorite" value had been assigned to the  user but not to the admin   
 
+Frontend
+- 
+    
 ## Deployment
 
 ### GitHub Pages

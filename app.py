@@ -117,6 +117,8 @@ def profile(username):
     if session["user"]:
         if session["user"] == "admin":
             user_comics = list(mongo.db.comics.find())
+            favorite = list(mongo.db.tags.find(
+                {"created_by": username}))
         else:
             # Comics are only available to user
             user_comics = list(
@@ -153,6 +155,14 @@ def tag_favorite(comic_id):
 
     mongo.db.tags.insert_one(tag)
     return redirect(url_for('get_comics'))
+
+
+# ---Adding delete function for tags in profile.html---
+@app.route("/delete_tag/<comic_id>")
+def delete_tag(comic_id):
+    mongo.db.tags.remove({"_id": ObjectId(comic_id)})
+    flash("Be gone Evil Fiend!!")
+    return redirect(url_for("profile", username=session['user']))
 
 
 # ---Log out session---
