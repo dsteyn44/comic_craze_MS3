@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 .card-title {
     font-family: 'Roboto', sans-serif;
@@ -13,8 +14,8 @@
 /*--Home page--*/
 /*--genral styling Styling--*/
 .logo-text {
-    font-family: 'Bangers', cursive;
-    margin-left: 20px;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 50px;
 }
 
 /*--Prallax container heightfrom materialize--*/
