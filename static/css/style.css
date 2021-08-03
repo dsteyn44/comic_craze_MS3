@@ -48,12 +48,9 @@
     font-size: 20px;
 }
   /*--card in comics--*/
-.bg-image {
-    background: url("https://www.slashgear.com/wp-content/uploads/2020/04/comic_books_marvel_main_pixa-1280x720.jpgrgba") rgba(11, 30, 204, 0.6);
-}
   
 div.card-panel.search-cd-size {
-    height: 100px;
+    height: 120px;
 }
 
 /*--Naoise Gaffney from slack--*/
