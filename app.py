@@ -59,6 +59,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "fav_superhero": request.form.get("fav_superhero").lower(),
+            "prof_image": request.form.get("prof_image"),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -125,10 +126,14 @@ def profile(username):
                 mongo.db.comics.find({"created_by": session["user"]}))
             favorite = list(mongo.db.tags.find(
                 {"created_by": username}))
-        return render_template(
+
+    prof_info = list(mongo.db.users.find({"username": session["user"]}))
+
+    return render_template(
             "profile.html", username=username,
             user_comics=user_comics,
-            favorite=favorite)
+            favorite=favorite,
+            prof_info=prof_info)
     return redirect(url_for("login"))
 
 

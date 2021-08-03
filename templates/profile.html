@@ -9,6 +9,24 @@
             <h3 class="center-align light-blue-text text-darken-4 logo-text">
                 {{ username|upper }}'s Profile
             </h3>
+            <p>Go to <a href="{{ url_for('get_comics') }}">comics</a> and choose your favorite from the
+                collection. If you are bored with your specific selection - simply say "Goodbye!" </p>
+            {% for prof in prof_info %}
+            <ul class="collection valign-wrapper" style="border: 0;">
+                <li class="collection-item avatar">
+                    {% if not prof.prof_image or prof.prof_image == null %}
+                    <img src="/static/images/kapow.png" alt="profile_pic" class="circle vertical-align">
+                    {% else %}
+                    <img src="{{ prof.prof_image }}" alt="profile_pic" class="circle vertical-align">
+                    {% endif %}
+                    <span class="title"><strong>Favorite SuperHero: {{ prof.fav_superhero }}</strong></span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            </ul>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -66,16 +84,18 @@
             {% endfor %}
             <!---Tags for Users Favorites -->
             <div class="container">
+                <div class="row">
+                    <div class="col s12 logo-text center">
+                        <h2>My Favorite Comics!!</h2>
+                        <p>Go to <a href="{{ url_for('get_comics') }}">comics</a> and choose your favorite from the
+                            collection. If you are bored with your specific selection - simply say "Goodbye!" </p>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-               <div class="col s12 logo-text center">
-                <h2 >My Favorite Comics!!</h2>
-            </div>
-            </div>
-            </div>
-            <div class="row" >
                 {% for fav in favorite %}
                 <div class="col s12 m4 center-align">
-                    <div class="card hoverable #1de9b6 teal accent-3"style="min-height: 500px;">
+                    <div class="card hoverable #1de9b6 teal accent-3" style="min-height: 500px;">
                         <div class="card-image waves-effect waves-block waves-light center-align">
                             {% if not fav.cover_image or fav.cover_image == "" %}
                             <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">

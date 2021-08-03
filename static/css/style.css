@@ -81,3 +81,9 @@ div.card-panel.search-cd-size {
 .cd-margin {
     margin: 0;
 }
+
+/*--Profile Page--*/
+.circle {
+    height: 40px;
+    width: 40px;
+}
