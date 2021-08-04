@@ -3,28 +3,32 @@
 {% block content %}
 
 <h3 class="center-align logo-text" style="margin-top: 0px; padding-top: 20px;">Sign In!</h3>
+<p class="logo-text center-align">Ready to return Sir? sign back in so we can get back to some real crime-fighting!</p>
 
 <!--Added card from Materialize-->
 <!--Change the url_for to login -->
 <div class="row" style="margin-bottom: 0px;">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
-        <div class="card-panel">
+        <div class="card-panel #fffde7 yellow lighten-5">
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
+                    <i class="material-icons prefix red-text">stars</i>
                     <input id="username" name="username" minlength="5" maxlength="20" type="text"
                         class="validate" required>
-                    <label for="username">Your SuperHero Name (username)</label>
+                        <span class="helper-text" data-error=""
+                            data-success="Woohoo! You got!"></span>
+                    <label for="username">SuperHero Username *Required</label>
                 </div>
             </div>
             <!--Password field-->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
+                    <i class="fas fa-fingerprint prefix red-text"></i>
                     <input id="password" type="password" name="password" minlength="5" maxlength="20" type="text"
-                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$" class="validate" required>
-                        <span class="helper-text" data-error="Must contain at least one number, lowercase letter, and between 5-20 characters"
-                            data-success="Woohoo!">5-20 characters,
-                            only lower class letters</span>
-                    <label for="password">Password</label>
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,15}$"class="validate" required>
+                        <span class="helper-text" data-error="Must contain between 5 - 15 characters, 1 number, 1 symbol"
+                            data-success="Woohoo! You got!">Must contain between 5 - 15 characters, 1 number, 1 symbol</span>
+                    <label for="password">The Safe Key (password) *Required</label>
                 </div>
             </div>
             <!--Removed email field-->
@@ -39,6 +43,15 @@
         <div class="col s12">
             <p class="center-align">Are you a new SuperHero?<a href="{{ url_for('register') }}"
                     class="light-blue-text text-darken-4"> Sign Up!</a></p>
+        </div>
+    </div>
+</div>
+<!--Inspirational Quote-->
+<div class="container">
+    <div class="row" style="margin-bottom: 0px; height: 500;">
+        <div class="center-align col-md-10 col-md-offset-1 logo-text">
+            <h5 class="center-align">“With great power comes great responsibility.”</h5>
+            <p class="center-align"></p>- Peter Parker A.K.A Spiderman (written by Stan Lee)</p>
         </div>
     </div>
 </div>

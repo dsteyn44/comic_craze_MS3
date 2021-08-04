@@ -3,11 +3,12 @@
 {% block content %}
 
 <h3 class="center-align logo-text" style="margin: 0px;">Sign Up!</h3>
+<p class="center-align logo-text" style="margin: 0px;">This is certainly not a job that a mere mortal can take!</p>
 
 <!--Added card from Materialize-->
 <div class="row"style="margin-bottom: 0px;">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel">
+        <div class="card-panel #fffde7 yellow lighten-5">
             <!--Add username-->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
@@ -23,11 +24,10 @@
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <i class="fas fa-atom prefix red-text"></i>
-                    <input id="fav_superhero" name="fav_superhero" minlength="5" maxlength="25" type="text" pattern="^[(?=.*[a-z])(?=.*[A-Z]){5-25}]$"
+                    <input id="fav_superhero" name="fav_superhero" minlength="5" maxlength="20" type="text" pattern="^[A-Za-z0-9_]{5,20}$"
                         class="validate">
                         <!---including helper text-->
-                        <span class="helper-text" data-error="5-25 characters, only letters" data-success="Woohoo! You got it!">5-20 characters,
-                            only lower class letters</span>
+                        <span class="helper-text" data-error="5-20 characters, only letters" data-success="Woohoo! You got it!">5-20 characters</span>
                     <!--add required and min/max length-->
                     <label for="fav_superhero">Favorite SuperHero? - optional</label>
                 </div>

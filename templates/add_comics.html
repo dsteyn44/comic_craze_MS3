@@ -3,10 +3,10 @@
 <!--Icon prefix from materialize-->
 <h3 class="black-text logo-text center-align" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;">Add to the Comic Collection</h3>
 <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
-    <form class="card-panel col s12 m8 offset-m2 center-align" method="POST" action="{{ url_for('add_comics') }}">
+    <form class="card-panel col s12 m6 offset-m3 center-align" method="POST" action="{{ url_for('add_comics') }}">
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">stars</i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="material-icons prefix red-text">stars</i>
                 <input id="superhero" name="superhero" type="text" minlength="5" maxlength="25"
                     pattern="^[(?=.*[a-z])(?=.*[A-Z]){5-20}]$" class="validate" required>
                     <span class="helper-text" data-error="Must contain be between 5-20 characters"
@@ -17,8 +17,8 @@
         </div>
         <!--Comic title-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="fas fa-book-open prefix light-blue-text text-darken-4"></i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="fas fa-book-open prefix red-text"></i>
                 <input id="title" name="title" type="text" minlength="5" maxlength="50"
                     pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" class="validate" required>
                 <label for="title">Title</label>
@@ -26,16 +26,16 @@
         </div>
         <!--Author title-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">turned_in</i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="material-icons prefix red-text">turned_in</i>
                 <input id="author" name="author" type="text" minlength="5" maxlength="50" class="validate" required>
                 <label for="author">Author</label>
             </div>
         </div>
         <!--publisher title-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">verified_user</i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="material-icons prefix red-text">verified_user</i>
                 <input id="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate"
                     required>
                 <label for="publisher">Publisher</label>
@@ -43,16 +43,16 @@
         </div>
         <!--date released-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="fas fa-calendar-alt prefix prefix red-text"></i>
                 <input id="date_released" name="date_released" type="text" class="datepicker validate" required>
                 <label for="date_released">Release Date</label>
             </div>
         </div>
         <!-- comments-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2 light-blue-text text-darken-4">
-                <i class="material-icons prefix">insert_comment</i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="material-icons prefix red-text">insert_comment</i>
                 <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50"
                     required></textarea>
                 <label for="comment">Comments</label>
@@ -60,7 +60,7 @@
         </div>
         <!-- drop down rater-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
+            <div class="input-field col s12 m6 offset-m3">
                 <select id="grade_star" name="grade_star" class="validate">
                     <i class="material-icons prefix right light-blue-text text-darken-4">grades</i>
                     <option value="" disabled select>Pick your rating</option>
@@ -73,8 +73,8 @@
         </div>
         <!--image file-->
         <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-                <i class="material-icons prefix light-blue-text text-darken-4">present_to_all</i>
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="fas fa-mask prefix red-text"></i>
                 <!---Regex from W3 schools-->
                 <input id="cover_image" name="cover_image" type="url" pattern="https?://.+" class="validate">
                 <label for="cover_image">Add URL link here for cover Image</label>

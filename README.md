@@ -32,7 +32,7 @@ Eventually the site will extend to include to some extra features such as: a blo
 -   ### Design
     -   #### Colour Scheme
         I have kept top a comic theme of bright colors echoing the comics from yesteryear and following a Roy Lichtenstein design feel.
-        - 
+        - #fffde7 yellow lighten-5: This was used for the forms and echo the color of the pages comics and how old they become
 
     -   #### Typography
         In regrads to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  

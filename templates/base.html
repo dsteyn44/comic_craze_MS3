@@ -18,7 +18,7 @@
   <!--Navbar from materialize-->
   <nav class="#e53935 red darken-1">
     <div class="nav-wrapper">
-      <a href="{{ url_for('home') }}" class="brand-logo logo-text" style="
+      <a href="{{ url_for('home') }}" class="brand-logo logo-text #fffde7-yellow-text lighten-5-text" style="
     margin-left: 5px;">Kapow!</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
@@ -64,7 +64,7 @@
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
-    <div class="row flashes">
+    <div class="row flashes #fffde7 yellow lighten-5">
       <h5 class="logo-text center-align"><i class="fas fa-exclamation-triangle"></i> Kapow! {{ message }}</h5>
     </div>
     {% endfor %}
@@ -91,8 +91,8 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text logo-text">Kapow!<small class="card-title"> comic collection</small></h5>
-          <p class="grey-text text-lighten-4">This is Kapow! Comic Collection. A fun hub for you, the Superhero, to access information on the best comics out
+          <h5 class="white-text logo-text #fffde7-yellow-text">Kapow!<small class="card-title"> comic collection</small></h5>
+          <p class="#fffde7-yellow-text">This is Kapow! Comic Collection. A fun hub for you, the Superhero, to access information on the best comics out
           there.Add the comics you like to your Profile and keep a record of the comics you like that other Superheroes have
           posted.</p>
         </div>
@@ -116,7 +116,7 @@
           class="fab fa-github"></i></a>
     </section>
     <div class="footer-copyright #e53935 red darken-1">
-      <div class="container">
+      <div class="container #fffde7-yellow-text lighten-5">
         © 2021 Kapow! Comic Collections
         <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
