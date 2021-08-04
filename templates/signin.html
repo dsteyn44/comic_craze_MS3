@@ -7,10 +7,10 @@
 <!--Added card from Materialize-->
 <!--Change the url_for to login -->
 <div class="row" style="margin-bottom: 0px;">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
         <div class="card-panel">
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
                     <input id="username" name="username" minlength="5" maxlength="20" type="text"
                         class="validate" required>
                     <label for="username">Your SuperHero Name (username)</label>
@@ -18,7 +18,7 @@
             </div>
             <!--Password field-->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
                     <input id="password" type="password" name="password" minlength="5" maxlength="20" type="text"
                         pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$" class="validate" required>
                         <span class="helper-text" data-error="Must contain at least one number, lowercase letter, and between 5-20 characters"
@@ -30,7 +30,7 @@
             <!--Removed email field-->
             <!--Submit button-->
             <div class="row">
-                <button type="submit" class="col s12 btn-large red darken-1 text-shadow logo-text">Let's Do this!</button>
+                <button type="submit" class="col s12 m6 offset-m3 btn-large red darken-1 text-shadow logo-text">Let's Do this!</button>
             </div>
         </div>
     </form>

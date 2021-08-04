@@ -7,8 +7,8 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix light-blue-text text-darken-4">stars</i>
-                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="20"
-                    pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" class="validate" required>
+                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="25"
+                    pattern="^[(?=.*[a-z])(?=.*[A-Z]){5-20}]$" class="validate" required>
                     <span class="helper-text" data-error="Must contain be between 5-20 characters"
                         data-success="Woohoo!">5-20 characters,
                         only lower class letters</span>
@@ -82,7 +82,7 @@
         </div>
         <!--submit button-->
         <div class="row">
-            <button class="btn #01579b light-blue darken-4 center-align waves-effect waves-light" type="submit">Add
+            <button class="btn red darken-1 center-align waves-effect waves-light logo-text" type="submit">Add
                 Comic
                 <i class="material-icons right">send</i>
             </button>

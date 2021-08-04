@@ -9,8 +9,6 @@
             <h3 class="center-align light-blue-text text-darken-4 logo-text">
                 {{ username|upper }}'s Profile
             </h3>
-            <p>Go to <a href="{{ url_for('get_comics') }}">comics</a> and choose your favorite from the
-                collection. If you are bored with your specific selection - simply say "Goodbye!" </p>
             {% for prof in prof_info %}
             <ul class="collection valign-wrapper" style="border: 0;">
                 <li class="collection-item avatar">
@@ -34,6 +32,8 @@
     <div class="row">
         <div class="col s12 logo-text center">
             <h2>Comics Add to the Collection!</h2>
+            <p>Go to <a href="{{ url_for('add_comics') }}">Add Comics</a> and add to our comic
+                collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
         </div>
     </div>
 </div>
@@ -62,7 +62,7 @@
                             <!--editing only to be permitted by user for their added comic-->
                             {% if session.user|lower == comics.created_by|lower %}
                             <a href="{{ url_for('delete_comic', comic_id=comics._id) }}"
-                                class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                                class="btn-small #ff1744 red accent-3 logo-text">Goodbye!</a>
                             <a href="{{ url_for('edit_comic', comic_id=comics._id) }}"
                                 class="btn-small #00e676 green accent-3">Edit</a>
                             {% endif %}
@@ -88,7 +88,7 @@
                     <div class="col s12 logo-text center">
                         <h2>My Favorite Comics!!</h2>
                         <p>Go to <a href="{{ url_for('get_comics') }}">comics</a> and choose your favorite from the
-                            collection. If you are bored with your specific selection - simply say "Goodbye!" </p>
+                            collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                                 <!--editing only to be permitted by user for their added comic-->
                                 {% if session.user|lower == fav.created_by|lower %}
                                 <a href="{{ url_for('delete_tag', comic_id=fav._id) }}"
-                                    class="btn-small #ff1744 red accent-3">Goodbye!</a>
+                                    class="btn-small #ff1744 red accent-3 logo-text">Goodbye!</a>
                                 <a href="{{ url_for('edit_comic', comic_id=fav._id) }}"
                                     class="btn-small #00e676 green accent-3">Edit</a>
                                 {% endif %}

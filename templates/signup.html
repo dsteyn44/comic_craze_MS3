@@ -6,69 +6,70 @@
 
 <!--Added card from Materialize-->
 <div class="row"style="margin-bottom: 0px;">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
             <!--Add username-->
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="username" name="username" minlength="5" maxlength="20" type="text"
-                        pattern="^(?=.*\d)(?=.*[a-z]).{5,20}$" class="validate" required>
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="material-icons prefix red-text">stars</i>
+                    <input id="username" name="username" minlength="5" maxlength="25" type="text" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,15}$" class="validate" required>
                         <!---including helper text-->
-                        <span class="helper-text" data-error="Must contain at least one number, lowercase letter, and between 5-20 characters" data-success="Woohoo!">5-20 characters,
-                            only letters and numbers</span>
+                        <span class="helper-text" data-error="Must contain between 5 - 15 characters, 1 number, 1 symbol" data-success="Woohoo! You got it!">Must contain between 5 - 15 characters, 1 number, 1 symbol</span>
                     <!--add required and min/max length-->
-                    <label for="username">Your SuperHero Name (username) *required</label>
+                    <label for="username">SuperHero Username *required</label>
                 </div>
             </div>
             <!--Add favorite super hero-->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="fas fa-atom prefix red-text"></i>
                     <input id="fav_superhero" name="fav_superhero" minlength="5" maxlength="25" type="text" pattern="^[(?=.*[a-z])(?=.*[A-Z]){5-25}]$"
                         class="validate">
                         <!---including helper text-->
-                        <span class="helper-text" data-error="5-25 characters, only letters" data-success="Woohoo!">5-20 characters,
+                        <span class="helper-text" data-error="5-25 characters, only letters" data-success="Woohoo! You got it!">5-20 characters,
                             only lower class letters</span>
                     <!--add required and min/max length-->
-                    <label for="fav_superhero">Who is your favorite SuperHero? - optional</label>
-                </div>
-            </div>
-            <!--image file-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix light-blue-text text-darken-4">present_to_all</i>
-                    <!---Regex from W3 schools-->
-                    <input id="cover_image" name="cover_image" type="url" pattern="https?://.+" class="validate">
-                    <span class="helper-text" data-error="Must incl. https// link" data-success="Woohoo!">Must incl. https// link</span>
-                    <label for="cover_image">Add URL link here for cover Image</label>
+                    <label for="fav_superhero">Favorite SuperHero? - optional</label>
                 </div>
             </div>
             <!--Email field-->
             <div class="row">
                 <!--Add pattern for email- code from ww3-->
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="far fa-envelope-open prefix red-text"></i>
                     <input id="email" type="email" name="email" type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         class="validate" required>
                         <!---including helper text-->
                         <span class="helper-text" data-error="Must contain '@' character, lowercase letters"
-                            data-success="Woohoo!">5-20 characters,
-                            only lower class letters</span>
+                            data-success="Woohoo! You got it!">Must contain '@' character, lowercase letters</span>
                     <label for="email">Email *required</label>
                 </div>
             </div>
             <!--Password field-->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="fas fa-fingerprint prefix red-text"></i>
                     <input id="password" type="password" name="password" minlength="5" maxlength="20" type="text"
-                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$" class="validate" required>
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,15}$"class="validate" required>
                         <!---including helper text-->
-                        <span class="helper-text" data-error="Must contain at least one number, lowercase letter, and between 5-20 characters" data-success="Woohoo!">5-20 characters,
-                            only lower class letters</span>
+                        <span class="helper-text" data-error="Must contain between 5 - 15 characters, 1 number, 1 symbol" data-success="Woohoo! You got it!">Must contain between 5 - 15 characters, 1 number, 1 symbol</span>
                     <label for="password">Password *required</label>
+                </div>
+            </div>
+            <!--image file-->
+            <div class="row">
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="fas fa-mask prefix red-text"></i>
+                    <!---Regex from W3 schools-->
+                    <input id="prof_image" name="prof_image" type="url" pattern="https?://.+" class="validate">
+                    <span class="helper-text" data-error="Must incl. https// link" data-success="Woohoo! You got it!">Must incl.
+                        https// link</span>
+                    <label for="prof_image">Add URL link for your profile picture</label>
                 </div>
             </div>
             <!--Submit button-->
             <div class="row">
-                <button type="submit" class="col s12 btn-large red darken-1 logo-text text-shadow">Up Up and Away!</button>
+                <button type="submit" class="col s12 m6 offset-m3 btn-large red darken-1 logo-text text-shadow">Up Up and Away!</button>
             </div>
         </div>
     </form>
