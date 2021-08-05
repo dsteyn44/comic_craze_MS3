@@ -4,25 +4,26 @@
 <!--Added card from Materialize-->
 <!--update form to div-->
 <div class="row">
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12 m6 offset-m3">
         <div class="card-panel  #fffde7 yellow lighten-5">
             <h3 class="center-align black-text logo-text">
                 {{ username|upper }}'s Profile
             </h3>
             {% for prof in prof_info %}
-            <ul class="collection valign-wrapper" style="border: 0;">
-                <li class="collection-item avatar">
+            <div class="row center">
+                <h5 class="title logo-text center">Super hero facts</h5>
+                <span class="center-align center">
                     {% if not prof.prof_image or prof.prof_image == null %}
                     <img src="/static/images/kapow.png" alt="profile_pic" class="circle vertical-align">
                     {% else %}
                     <img src="{{ prof.prof_image }}" alt="profile_pic" class="circle vertical-align">
                     {% endif %}
-                    <span class="title logo-text"><strong>Super hero facts</strong></span>
-                    <p>Superhero Name: {{ prof.username }} <br>
-                        SuperHero you admire Most: {{ prof.fav_superhero }}<br>
-                        Your Super Powers: {{ prof.super_pow }}
-                    </p>
-                </li>
+                </span>
+            </div>
+            <ul class="collection center align" style="border: 0;">
+                <li><strong>Super Name:</strong> {{ prof.username }} </li>
+                <li></li><strong>SuperHero you admire Most:</strong>{{ prof.fav_superhero }}</li>
+                <li></li><strong>Your Super Powers:</strong>{{ prof.super_pow }}</li>
             </ul>
             {% endfor %}
         </div>
@@ -31,7 +32,7 @@
 <div class="container">
     <div class="row">
         <div class="col s12 logo-text center">
-            <h2>Comics Add to the Collection!</h2>
+            <h2>Comics you added to the Collection!</h2>
             <p>Go to <a href="{{ url_for('add_comics') }}" class="red-text">Add Comics</a> and add to our comic
                 collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
         </div>
@@ -53,7 +54,7 @@
                     <div class="card-content" style="padding-top: 0px;">
                         <span class="card-title activator grey-text text-darken-4">
                             <ul>
-                                <li class="card-text"><strong>{{ comics.superhero }}</strong></li>
+                                <li class="card-text">{{ comics.superhero|upper }}</li>
                                 <li><small>{{ comics.title }}</small></li>
                                 <li><small>Rating: {{ comics.grade_star }}</small></li>
                             </ul>
@@ -62,9 +63,11 @@
                             <!--editing only to be permitted by user for their added comic-->
                             {% if session.user|lower == comics.created_by|lower %}
                             <a href="{{ url_for('delete_comic', comic_id=comics._id) }}"
-                                class="btn-small #ff1744 red accent-3 logo-text">Goodbye!</a>
+                                class="btn-small #ff1744 red accent-3 logo-text"
+                                style="margin-left: 5px; margin-top: 3px;">Goodbye!</a>
                             <a href="{{ url_for('edit_comic', comic_id=comics._id) }}"
-                                class="btn-small #00e676 green accent-3">Edit</a>
+                                class="btn-small #00e676 green accent-3 logo-text"
+                                style="margin-left: 5px; margin-top: 3px;">Edit</a>
                             {% endif %}
                         </span>
                     </div>
@@ -72,12 +75,12 @@
                         <span class="card-title grey-text text-darken-4">{{ comics.superhero }}<i
                                 class="material-icons right">close</i>
                         </span>
-                        <span>
-                            <div class="left cd-margin">Author: {{ comics.author }}</div><br>
-                            <div class="left cd-margin">Date Released: {{ comics.date_released }}</div><br>
-                            <div class="left cd-margin">Publisher: {{ comics.publisher }}</div><br>
-                            <div class="left cd-margin">Synopsis: {{ comics.comment }}</div><br>
-                        </span>
+                        <ul>
+                            <li class="left cd-margin">Author: {{ comics.author }}</li><br>
+                            <li class="left cd-margin">Date Released: {{ comics.date_released }}</li><br>
+                            <li class="left cd-margin">Publisher: {{ comics.publisher }}</li><br>
+                            <li class="left cd-margin">Synopsis: {{ comics.comment }}</li><br>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -87,7 +90,8 @@
                 <div class="row">
                     <div class="col s12 logo-text center">
                         <h2>My Favorite Comics!!</h2>
-                        <p>Go to <a href="{{ url_for('get_comics') }}" class="red-text">comics</a> and choose your favorite from the
+                        <p>Go to <a href="{{ url_for('get_comics') }}" class="red-text">comics</a> and choose your
+                            favorite from the
                             collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
                     </div>
                 </div>
@@ -115,9 +119,11 @@
                                 <!--editing only to be permitted by user for their added comic-->
                                 {% if session.user|lower == fav.created_by|lower %}
                                 <a href="{{ url_for('delete_tag', comic_id=fav._id) }}"
-                                    class="btn-small #ff1744 red accent-3 logo-text">Goodbye!</a>
+                                    class="btn-small #ff1744 red accent-3 logo-text"
+                                    style="margin-left: 5px; margin-top: 3px;">Goodbye!</a>
                                 <a href="{{ url_for('edit_comic', comic_id=fav._id) }}"
-                                    class="btn-small #00e676 green accent-3">Edit</a>
+                                    class="btn-small #00e676 green accent-3"
+                                    style="margin-left: 5px; margin-top: 3px;">Edit</a>
                                 {% endif %}
                             </span>
                         </div>
@@ -125,12 +131,12 @@
                             <span class="card-title grey-text text-darken-4">{{ fav.superhero }}<i
                                     class="material-icons right">close</i>
                             </span>
-                            <span>
-                                <div class="left cd-margin">Author: {{ fav.author }}</div><br>
-                                <div class="left cd-margin">Date Released: {{ fav.date_released }}</div><br>
-                                <div class="left cd-margin">Publisher: {{ fav.publisher }}</div><br>
-                                <div class="left cd-margin">Synopsis: {{ fav.comment }}</div><br>
-                            </span>
+                            <ul>
+                                <li class="left cd-margin">Author: {{ fav.author }}</li><br>
+                                <li class="left cd-margin">Date Released: {{ fav.date_released }}</li><br>
+                                <li class="left cd-margin">Publisher: {{ fav.publisher }}</li><br>
+                                <li class="left cd-margin">Synopsis: {{ fav.comment }}</li><br>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -138,6 +144,5 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}

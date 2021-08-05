@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.parallax').parallax();
     $('.dropdown-trigger').dropdown();
     $('.tooltipped').tooltip();
+    $('.modal').modal();
     $('.datepicker').datepicker({
       format: "dd mmm yyyy",
       yearRange: 100,
@@ -13,5 +14,3 @@ $(document).ready(function(){
     });
      $('select').formSelect();
   });
-
-  
