@@ -41,6 +41,10 @@ def search():
     mongo.db.comics.create_index([("superhero", "text"), (
         "title", "text")])
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
+    if comics == '':
+        flash("Your search turned up nothing - try again pLease!")
+        return redirect(url_for("get_comics"))
+
     return render_template("comics.html", comics=comics)
 
 
@@ -60,6 +64,7 @@ def register():
             "username": request.form.get("username").lower(),
             "fav_superhero": request.form.get("fav_superhero").lower(),
             "prof_image": request.form.get("prof_image"),
+            "super_pow": request.form.get("super_pow").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -120,6 +125,9 @@ def profile(username):
             user_comics = list(mongo.db.comics.find())
             favorite = list(mongo.db.tags.find(
                 {"created_by": username}))
+            prof_info = list(mongo.db.users.find(
+                {"username": session["user"]}))
+
         else:
             # Comics are only available to user
             user_comics = list(
@@ -127,13 +135,15 @@ def profile(username):
             favorite = list(mongo.db.tags.find(
                 {"created_by": username}))
 
-    prof_info = list(mongo.db.users.find({"username": session["user"]}))
+            prof_info = list(mongo.db.users.find(
+                {"username": session["user"]}))
 
-    return render_template(
+        return render_template(
             "profile.html", username=username,
             user_comics=user_comics,
             favorite=favorite,
             prof_info=prof_info)
+
     return redirect(url_for("login"))
 
 
@@ -280,6 +290,22 @@ def delete_category(category_id):
     mongo.db.catagories.remove({"_id": ObjectId(category_id)})
     flash("Be gone Evil Fiend!!")
     return redirect(url_for("get_categories"))
+
+
+# ---Error handlers--
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error_handlers/500.html"), 500
+
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template("error_handlers/403.html"), 403
 
 
 if __name__ == "__main__":

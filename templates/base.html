@@ -59,18 +59,18 @@
     <li><a href="{{ url_for('login') }}">Sign In</a></li>
     {% endif %}
   </ul>
-  <section>
+  <div>
     <!--Flash messages will be displayed-->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
-    <div class="row flashes #fffde7 yellow lighten-5">
-      <h5 class="logo-text center-align"><i class="fas fa-exclamation-triangle"></i> Kapow! {{ message }}</h5>
+    <div class="row flashes #fffde7 yellow lighten-5" style="margin-top: 0; margin-bottom: 0; padding-top: 10px; padding-bottom: 10px;">
+      <h5 class="logo-text red-text center-align"><i class="fas fa-exclamation-triangle"></i> Shazaam! {{ message }}</h5>
     </div>
     {% endfor %}
     {% endif %}
     {% endwith %}
-  </section>
+  </div>
   <span>
     {% block home %}
     {% endblock %}
@@ -100,7 +100,7 @@
         </div>
       </div>
     </div>
-    <section class="text-center center-align mb-4">
+    <div class="text-center center-align mb-4">
       <!-- Facebook -->
       <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/"
         role="button"><i class="fab fa-facebook-f"></i></a>
@@ -114,7 +114,7 @@
       <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;;"
         href="https://github.com/dsteyn44/kapow_comics_MS3/blob/main/app.py" role="button"><i
           class="fab fa-github"></i></a>
-    </section>
+    </div>
     <div class="footer-copyright #e53935 red darken-1">
       <div class="container #fffde7-yellow-text lighten-5">
         © 2021 Kapow! Comic Collections

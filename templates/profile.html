@@ -5,7 +5,7 @@
 <!--update form to div-->
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
+        <div class="card-panel  #fffde7 yellow lighten-5">
             <h3 class="center-align black-text logo-text">
                 {{ username|upper }}'s Profile
             </h3>
@@ -17,9 +17,10 @@
                     {% else %}
                     <img src="{{ prof.prof_image }}" alt="profile_pic" class="circle vertical-align">
                     {% endif %}
-                    <span class="title"><strong>Favorite SuperHero: {{ prof.fav_superhero }}</strong></span>
-                    <p>First Line <br>
-                        Second Line
+                    <span class="title logo-text"><strong>Super hero facts</strong></span>
+                    <p>Superhero Name: {{ prof.username }} <br>
+                        SuperHero you admire Most: {{ prof.fav_superhero }}<br>
+                        Your Super Powers: {{ prof.super_pow }}
                     </p>
                 </li>
             </ul>
@@ -31,7 +32,7 @@
     <div class="row">
         <div class="col s12 logo-text center">
             <h2>Comics Add to the Collection!</h2>
-            <p>Go to <a href="{{ url_for('add_comics') }}">Add Comics</a> and add to our comic
+            <p>Go to <a href="{{ url_for('add_comics') }}" class="red-text">Add Comics</a> and add to our comic
                 collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
         </div>
     </div>
@@ -75,7 +76,7 @@
                             <div class="left cd-margin">Author: {{ comics.author }}</div><br>
                             <div class="left cd-margin">Date Released: {{ comics.date_released }}</div><br>
                             <div class="left cd-margin">Publisher: {{ comics.publisher }}</div><br>
-                            <div class="left cd-margin">Comment: {{ comics.comment }}</div><br>
+                            <div class="left cd-margin">Synopsis: {{ comics.comment }}</div><br>
                         </span>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                 <div class="row">
                     <div class="col s12 logo-text center">
                         <h2>My Favorite Comics!!</h2>
-                        <p>Go to <a href="{{ url_for('get_comics') }}">comics</a> and choose your favorite from the
+                        <p>Go to <a href="{{ url_for('get_comics') }}" class="red-text">comics</a> and choose your favorite from the
                             collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
                     </div>
                 </div>
@@ -128,7 +129,7 @@
                                 <div class="left cd-margin">Author: {{ fav.author }}</div><br>
                                 <div class="left cd-margin">Date Released: {{ fav.date_released }}</div><br>
                                 <div class="left cd-margin">Publisher: {{ fav.publisher }}</div><br>
-                                <div class="left cd-margin">Comment: {{ fav.comment }}</div><br>
+                                <div class="left cd-margin">Synopsis: {{ fav.comment }}</div><br>
                             </span>
                         </div>
                     </div>
