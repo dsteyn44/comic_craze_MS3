@@ -5,10 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="grid-example col s12 center-align logo-text">
-            <span class="flow-text">
+            <div class="flow-text">
                 <h1>Our Comic Collection</h1>
                 <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These are the tales and legends we have recorded in anuals of the history of the Super-verse! So go forth and peruse yee Super People!</p>
-            </span>
+                <p>If you have become part of our Suoper Hero league, then you can <a href="{{ url_for('login') }}" class="red-text text-darken-4"> Sign In!</a> and tag your favorites by clicking this button!<i class="material-icons red-text">stars</i></p>
+                <p>If you would like to become part of our Suoper Hero league, then you can <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4"> Sign Up!</a> and tag your favorites!</p>
+            </div>
         </div>
     </div>
 </div>
@@ -38,15 +40,9 @@
 <!--container and card taken from materialize-followed the minitask project-->
 <div class="container">
     <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
-        {% for comic in comics %}
-        <div class="col s12 m4 center-align">
-            <div class="card hoverable #ffc107 amber" style="min-height: 500px;">
-                {% if session.user|lower %}
-                <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
-                    class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
-                    data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
-                </span>
-                {% endif %}
+                        {% for comic in comics %}
+                        <div class="col s12 m4 center-align">
+            <div class="card #ffff00 yellow accent-2 hoverable" style="min-height: 500px;">
                 <div class="card-image waves-effect waves-block waves-light center-align">
                     {% if not comic.cover_image or comic.cover_image == "" %}
                     <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
@@ -54,34 +50,41 @@
                     <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
                     {% endif %}
                 </div>
+                    {% if session.user|lower %}
+                    <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
+                        class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
+                        data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
+                    {% endif %}
                 <div class="card-content" style="padding-top: 0px;">
-                    <span class="card-title activator grey-text text-darken-4">
-                        <i class="fas fa-info-circle blue-text small"
-                            style="padding-top: 10px; margin-bottom: 0px;"></i>
-                        <ul style="margin-top: 0px; margin-bottom: 0px;">
-                            <li class="card-text"><strong>{{ comic.superhero|upper }}</strong></li>
-                            <li style="height: 20px; font-size: 20px;"><strong>{{ comic.title }}</strong></li>
-                            <li style="height: 20px; font-size: 15px;">Rating: {{ comic.grade_star }}</li>
-                            <li style="height: 20px;"><small style="font-size: 10px;">Date: {{ comic.date_released }}</small></li>
+                    <div class="card-title activator grey-text text-darken-4">
+                        <ul style="margin-bottom: 0px;">
+                            <li class="card-text">{{ comic.superhero|upper }}</li>
+                            <li><small>{{ comic.title }}</small></li>
+                            <li><small>Rating: {{ comic.grade_star }}</small></li>
                         </ul>
+                        <i class="fas fa-info-circle"></i>
+                        <i class="fas fa-caret-down"></i>
+                        <!--editing only to be permitted by user for their added comic-->
+                        {% if session.user|lower == comic.created_by|lower %}
+                        <a href="{{ url_for('delete_comic', comic_id=comic._id) }}"
+                            class="btn-small #ff1744 red accent-3 logo-text"
+                            style="margin-left: 5px; margin-top: 3px;">Goodbye!</a>
+                        <a href="{{ url_for('edit_comic', comic_id=comic._id) }}"
+                            class="btn-small #00e676 green accent-3 logo-text"
+                            style="margin-left: 5px; margin-top: 3px;">Edit</a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ comic.superhero }}<i
                             class="material-icons right">close</i>
                     </span>
-                    <ul>
-                        <li class="left cd-margin"><strong>Author:</strong> {{ comic.author }}</li><br>
-                        <li class="left cd-margin"><strong>Date Released:</strong> {{ comic.date_released }}</li><br>
-                        <li class="left cd-margin"><strong>Publisher:</strong> {{ comic.publisher }}</li><br>
-                        <li class="left cd-margin"><strong>Synopsis:</strong> {{ comic.comment }}</li><br>
-                    </ul>
-                    {% if session.user|lower == comic.created_by|lower %}
-                    <!--editing only to be permitted by user-->
-                    <a href="{{ url_for('delete_comic', comic_id=comic._id) }}"
-                        class="btn-small #ff1744 red accent-3">Goodbye!</a>
-                    <a href="{{ url_for('edit_comic', comic_id=comic._id) }}"
-                        class="btn-small #00e676 green accent-3 logo-text">Edit</a>
-                    {% endif %}
+                    <div>
+                        <p class="left cd-margin">Author: {{ comic.author }}</p><br>
+                        <p class="left cd-margin">Date Released: {{ comic.date_released }}</p><br>
+                        <p class="left cd-margin">Publisher: {{ comic.publisher }}</p><br>
+                        <p class="left cd-margin">Synopsis: {{ comic.comment }}</p><br>
+                    </div>
                 </div>
             </div>
         </div>

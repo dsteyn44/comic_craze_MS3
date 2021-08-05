@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col s12 m6 offset-m3">
         <div class="card-panel  #fffde7 yellow lighten-5">
-            <h3 class="center-align black-text logo-text">
+            <h3 class="center-align black-text logo-text" style="margin-left: 0px;">
                 {{ username|upper }}'s Profile
             </h3>
             {% for prof in prof_info %}
@@ -22,8 +22,8 @@
             </div>
             <ul class="collection center align" style="border: 0;">
                 <li><strong>Super Name:</strong> {{ prof.username }} </li>
-                <li></li><strong>SuperHero you admire Most:</strong>{{ prof.fav_superhero }}</li>
-                <li></li><strong>Your Super Powers:</strong>{{ prof.super_pow }}</li>
+                <li><strong>SuperHero you admire Most:</strong>{{ prof.fav_superhero }}</li>
+                <li><strong>Your Super Powers:</strong>{{ prof.super_pow }}</li>
             </ul>
             {% endfor %}
         </div>
@@ -52,7 +52,7 @@
                         {% endif %}
                     </div>
                     <div class="card-content" style="padding-top: 0px;">
-                        <span class="card-title activator grey-text text-darken-4">
+                        <div class="card-title activator grey-text text-darken-4">
                             <ul>
                                 <li class="card-text">{{ comics.superhero|upper }}</li>
                                 <li><small>{{ comics.title }}</small></li>
@@ -69,18 +69,18 @@
                                 class="btn-small #00e676 green accent-3 logo-text"
                                 style="margin-left: 5px; margin-top: 3px;">Edit</a>
                             {% endif %}
-                        </span>
+                        </div>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ comics.superhero }}<i
                                 class="material-icons right">close</i>
                         </span>
-                        <ul>
-                            <li class="left cd-margin">Author: {{ comics.author }}</li><br>
-                            <li class="left cd-margin">Date Released: {{ comics.date_released }}</li><br>
-                            <li class="left cd-margin">Publisher: {{ comics.publisher }}</li><br>
-                            <li class="left cd-margin">Synopsis: {{ comics.comment }}</li><br>
-                        </ul>
+                        <div>
+                            <p class="left cd-margin">Author: {{ comics.author }}</p><br>
+                            <p class="left cd-margin">Date Released: {{ comics.date_released }}</p><br>
+                            <p class="left cd-margin">Publisher: {{ comics.publisher }}</p><br>
+                            <p class="left cd-margin">Synopsis: {{ comics.comment }}</p><br>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,12 +131,12 @@
                             <span class="card-title grey-text text-darken-4">{{ fav.superhero }}<i
                                     class="material-icons right">close</i>
                             </span>
-                            <ul>
-                                <li class="left cd-margin">Author: {{ fav.author }}</li><br>
-                                <li class="left cd-margin">Date Released: {{ fav.date_released }}</li><br>
-                                <li class="left cd-margin">Publisher: {{ fav.publisher }}</li><br>
-                                <li class="left cd-margin">Synopsis: {{ fav.comment }}</li><br>
-                            </ul>
+                            <div>
+                                <p class="left cd-margin">Author: {{ fav.author }}</p><br>
+                                <p class="left cd-margin">Date Released: {{ fav.date_released }}</p><br>
+                                <p class="left cd-margin">Publisher: {{ fav.publisher }}</p><br>
+                                <p class="left cd-margin">Synopsis: {{ fav.comment }}</p><br>
+                            </div>
                         </div>
                     </div>
                 </div>
