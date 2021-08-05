@@ -9,20 +9,19 @@
         <div class="row" style="padding-top: 10px; margin-bottom: 0px;">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">stars</i>
-                <input value="{{ comic.superhero }}" id="superhero" name="superhero" type="text" minlength="5"
-                    maxlength="25" pattern="^[(?=.*[a-z])(?=.*[A-Z]){5-20}]$" class="validate" required>
-                <span class="helper-text" data-error="5-25 characters, only letters" data-success="Woohoo!">5-20 no
-                    characters,
-                    only lower class letters</span>
-                <label for="superhero">Superhero</label>
+                <input  value="{{ comic.superhero }}" id="superhero" name="superhero" type="text" minlength="5" maxlength="25" class="validate" required>
+                <span class="helper-text" data-error="5-25 characters" data-success="Woohoo! You got this!">5-25 characters</span>
+                <label for="superhero">Superhero *Required</label>
             </div>
         </div>
         <!--Comic title-->
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="fas fa-book-open prefix red-text"></i>
-                <input value="{{ comic.title }}" id="title" name="title" type="text" minlength="5" maxlength="50"
+                <input value="{{ comic.title }}" id="title" name="title" type="text" minlength="5" maxlength="30"
                     class="validate" required>
+                    <span class="helper-text" data-error="5-25 characters, only letters" data-success="Woohoo!">5-25 characters
+                        only lower class letters</span>
                 <label for="title">Title</label>
             </div>
         </div>
@@ -30,18 +29,21 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">turned_in</i>
-                <input value="{{ comic.author }}" id="author" name="author" type="text" minlength="5" maxlength="50"
-                    class="validate" required>
-                <label for="author">Author</label>
+                <input value="{{ comic.author }}" id="author" name="author" type="text" minlength="5" maxlength="25" class="validate" required>
+                <span class="helper-text" data-error="5-25 characters"
+                    data-success="Woohoo! You got this!">5-25 characters</span>
+                <label for="author">Author *Required</label>
             </div>
         </div>
         <!--publisher title-->
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">verified_user</i>
-                <input value="{{ comic.publisher }}" id="publisher" name="publisher" type="text" minlength="5"
-                    maxlength="50" class="validate" required>
-                <label for="publisher">Publisher</label>
+                <input value="{{ comic.publisher }}" d="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate"
+                    required>
+                    <span class="helper-text" data-error="5-25 characters"
+                        data-success="Woohoo! You got this!">5-25 characters</span>
+                <label for="publisher">Publisher *Required</label>
             </div>
         </div>
         <!--date released-->
@@ -57,8 +59,8 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">insert_comment</i>
-                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50"
-                    required>{{ comic.comment }}</textarea>
+                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="400"></textarea>
+                <span class="helper-text" data-error="5-100 characters" data-success="Woohoo! You got this!">5-400 characters</span>
                 <label for="comment">Synopsis</label>
             </div>
         </div>

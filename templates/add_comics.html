@@ -10,12 +10,9 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">stars</i>
-                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="25"
-                    pattern="^[A-Za-z0-9_]{5,20}$" class="validate" required>
-                    <span class="helper-text" data-error="5-20 characters,
-                        one upper class, no symbols"
-                        data-success="Woohoo! You got this!">5-20 characters,
-                        one upper class, no symbols</span>
+                <input id="superhero" name="superhero" type="text" minlength="5" maxlength="25" class="validate" required>
+                    <span class="helper-text" data-error="5-25 characters"
+                        data-success="Woohoo! You got this!">5-25 characters,</span>
                 <label for="superhero">Superhero *Required</label>
             </div>
         </div>
@@ -23,10 +20,8 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="fas fa-book-open prefix red-text"></i>
-                <input id="title" name="title" type="text" minlength="5" maxlength="50"
-                    pattern="^[A-Za-z0-9_]{5,20}$" class="validate" required>
-                    <span class="helper-text" data-error="5-20 characters, one upper class, no symbols" data-success="Woohoo! You got this!">5-20 characters,
-                        one upper class, no symbols</span>
+                <input id="title" name="title" type="text" minlength="5" maxlength="25" class="validate" required>
+                    <span class="helper-text" data-error="5-25 characters" data-success="Woohoo! You got this!">5-25 characters</span>
                 <label for="title">Title *Required</label>
             </div>
         </div>
@@ -34,23 +29,21 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">turned_in</i>
-                <input id="author" name="author" type="text" minlength="5" maxlength="50" class="validate">
-                <span class="helper-text" data-error="5-20 characters, one upper class, no symbols"
-                    data-success="Woohoo! You got this!">5-20 characters,
-                    one upper class, no symbols</span>
-                <label for="author">Author</label>
+                <input id="author" name="author" type="text" minlength="5" maxlength="25" class="validate" required>
+                <span class="helper-text" data-error="5-25 characters"
+                    data-success="Woohoo! You got this!">5-25 characters</span>
+                <label for="author">Author *Required</label>
             </div>
         </div>
         <!--publisher title-->
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">verified_user</i>
-                <input id="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate"
+                <input id="publisher" name="publisher" type="text" minlength="5" maxlength="25" class="validate"
                     required>
-                    <span class="helper-text" data-error="5-20 characters, one upper class, no symbols"
-                        data-success="Woohoo! You got this!">5-20 characters,
-                        one upper class, no symbols</span>
-                <label for="publisher">Publisher</label>
+                    <span class="helper-text" data-error="5-25 characters"
+                        data-success="Woohoo! You got this!">5-25 characters</span>
+                <label for="publisher">Publisher *Required</label>
             </div>
         </div>
         <!--date released-->
@@ -65,7 +58,8 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">insert_comment</i>
-                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="50"></textarea>
+                <textarea id="comment" name="comment" class="materialize-textarea" minlength="5" maxlength="400"></textarea>
+                <span class="helper-text" data-error="5-400 characters" data-success="Woohoo! You got this!">5-400 characters</span>
                 <label for="comment">Synopsis</label>
             </div>
         </div>

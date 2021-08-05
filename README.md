@@ -2,11 +2,11 @@
 
 [View the live project here.](https://kapow-comics.herokuapp.com/)
 
-Kapow Comic Collection is a hub where comic collectors can add the data of  recent comics they have read or actually have in their possession such as rare types. Users will be able to subscribe to their own profile page with a collection of the comics they enjoy or have read; perhaps they wish to keep  and that also a where they can add in new comics. Also they will be able to edit any of the comics on the website they see fit. will find a data base to other other websites. As more users subscribe so the database will increase. Links will be added to eBay or a website where they can purchase the comics. 
+Kapow Comic Collection is a hub where comic collectors can add the data of recent comics they have read or actually have in their possession such as rare types. Users will be able to sign up to their own profile page with a collection of the comics they enjoy or have read; perhaps they wish to keep  and that also a where they can add in new comics. Also they will be able to edit any of the comics on the website they see fit. will find a data base to other other websites. As more users subscribe so the database will increase. Links will be added to eBay or a website where they can purchase the comics. 
 
 Eventually the site will extend to include to some extra features such as: a blog, a fan page that extends to social network. A database of Superheroes will also be included.
 
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
+![mock-up](static/images/kapow_responsive.png)
 
 ## User Experience (UX)
 
@@ -31,12 +31,12 @@ Eventually the site will extend to include to some extra features such as: a blo
 
 -   ### Design
     -   #### Colour Scheme
-        I have kept top a comic theme of bright colors echoing the comics from yesteryear and following a Roy Lichtenstein design feel.
+        - I have kept top a comic theme of bright colors echoing the comics from yesteryear and following a Roy Lichtenstein design feel.
         - #fffde7 yellow lighten-5: This was used for the forms and echo the color of the pages comics and how old they become
 
     -   #### Typography
-        In regrads to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
-        - 
+        - In regards to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
+        - the main logo is set in 
     -   #### Imagery
         -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 

@@ -192,9 +192,6 @@ def logout():
 # ---Adding Comics---
 @app.route("/add_comics", methods=["GET", "POST"])
 def add_comics():
-    if not session.get("user"):
-        return render_template("error_handlers/404.html")
-
     if request.method == "POST":
         ad_comic = {
             "superhero": request.form.get("superhero"),
