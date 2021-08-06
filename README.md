@@ -2,9 +2,9 @@
 
 [View the live project here.](https://kapow-comics.herokuapp.com/)
 
-Kapow Comic Collection is a hub where comic collectors can add the data of recent comics they have read or actually have in their possession such as rare types. Users will be able to sign up to their own profile page with a collection of the comics they enjoy or have read; perhaps they wish to keep  and that also a where they can add in new comics. Also they will be able to edit any of the comics on the website they see fit. will find a data base to other other websites. As more users subscribe so the database will increase. Links will be added to eBay or a website where they can purchase the comics. 
+Kapow Comic Collection is a hub where comic collectors can add the data of recent comics they have read or actually have in their possession such as rare types. Users will be able to sign up to their own profile page. Perhaps they wish to tag comics that they like or wish to add their own comics that they read in the collection. In addition to this Users will be able to edit or delete any of they added comics on the website.  As more users subscribe so the database will increase. Links will eventually be  added to eBay or a website where they can purchase the comics. 
 
-Eventually the site will extend to include to some extra features such as: a blog, a fan page that extends to social network. A database of Superheroes will also be included.
+As the base grows the site will extend to include some extra features such as: a blog, a fan page that extends to social network. A database of Superheroes will also be included.
 
 ![mock-up](static/images/kapow_responsive.png)
 
@@ -12,15 +12,15 @@ Eventually the site will extend to include to some extra features such as: a blo
 
 -   ### User stories
 
-    -   #### First Time Visitor Goals
+    -   #### First Time User Goals
 
-        1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-        2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+        1. As a First Time User, I want to easily understand the main purpose of the site and learn more about the concept.
+        2. As a First Time User, I want to be able to easily navigate throughout the site to find content.
+        3. As a First Time User, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to find information about coding challenges.
+        1. As a Returning Visitor, I want to see .
         2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
         3. As a Returning Visitor, I want to find community links.
 
@@ -31,14 +31,20 @@ Eventually the site will extend to include to some extra features such as: a blo
 
 -   ### Design
     -   #### Colour Scheme
-        - I have kept top a comic theme of bright colors echoing the comics from yesteryear and following a Roy Lichtenstein design feel.
-        - #fffde7 yellow lighten-5: This was used for the forms and echo the color of the pages comics and how old they become
+        - I have opted for a comic theme of bright colors echoing the comics from yesteryear.
+        - The use of black as the main color of the type is important - mimicing the type of those ink drawn comics.
+        - #fffde7 yellow lighten-5 (from Materialize): This was used for the forms and echo the color of the pages comics and how old they become.
+        - #00bcd4 cyan (from Materialize): This was used to represent superman's uniform. Maybe a bit of a cliche but something the User will immediatly identify with.
+        - 
 
     -   #### Typography
         - In regards to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
-        - the main logo is set in 
+        - The main logo is set in "Permanent Marker" from google fonts. At first I used Bungee Shade but I felt tghis did not reflect totally the comic feel of old styled comics of yesteryear. I also used "Permanent Marker" for some of the main copy such as below the headlins on the comics page and Sign-in Sign-up ppages. However for the main copy of the synopsis of the "comic cards", i opeted for Roboto to me clearer.
+        - In terms of the icons, I have gone with a mixture of Materialize and Font Awesome icons. 
+
+
     -   #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+        - As this project is about comics the typical imagery of comic art is important. The home page reflects this with an image of comics in the background. 
 
 *   ### Wireframes
 
@@ -71,7 +77,7 @@ Eventually the site will extend to include to some extra features such as: a blo
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
     - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+    - Google fonts into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 1. [jQuery:](https://jquery.com/)
@@ -90,13 +96,15 @@ Eventually the site will extend to include to some extra features such as: a blo
     - Freepik is a library of free images.
 1. [Material Bootstrap:](https://mdbootstrap.com/)
     - Material bootstrap is 
+
+
 ## Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+-   [PEP 8](http://pep8online.com/) 
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -238,7 +246,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 -   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
 
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+-   
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
@@ -258,6 +266,10 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 -   My Mentor Precious for continuous helpful feedback.
 
 -   Tutor support at Code Institute for their support - Fatima, Igor, Jo and John. Thank you for being so patient.
+
+-   Talyor Brookes, thanks for the help with the creating a favorites tag. Hope it goes well with your MS4.
+
+-   All the guys in my Slack group. Thank you for the support.
 
 -   My wife Sofia and sons August & Adam for having to put up with me during this course. Love you to the monn and back.
 

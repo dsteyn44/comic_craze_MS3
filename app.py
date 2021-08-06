@@ -41,11 +41,11 @@ def search():
     mongo.db.comics.create_index([("superhero", "text"), (
         "title", "text")])
     comics = list(mongo.db.comics.find({"$text": {"$search": query}}))
-    if comics == '':
+    if len(comics) > 0:
+        return render_template("comics.html", comics=comics)
+    else:
         flash("Your search turned up nothing - try again pLease!")
-        return redirect(url_for("get_comics"))
-
-    return render_template("comics.html", comics=comics)
+        return render_template("comics.html", comics=comics)
 
 
 # ---Our sign-up page---
