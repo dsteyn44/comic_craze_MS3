@@ -7,9 +7,17 @@
         <div class="grid-example col s12 center-align logo-text">
             <div class="flow-text">
                 <h1>Our Comic Collection</h1>
-                <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These are the tales and legends we have recorded in anuals of the history of the Super-verse! So go forth and peruse yee Super People!</p>
-                <p>If you have become part of our Suoper Hero league, then you can <a href="{{ url_for('login') }}" class="red-text text-darken-4"> Sign In!</a> and tag your favorites by clicking this button!<i class="material-icons red-text">stars</i></p>
-                <p>If you would like to become part of our Suoper Hero league, then you can <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4"> Sign Up!</a> and tag your favorites!</p>
+                <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These
+                    are the tales and legends we have recorded in anuals of the history of the Super-verse! So go forth
+                    and peruse yee Super People!</p>
+                {% if not session.user %}
+                <p>If you have become part of our Super Hero league, then you can <a href="{{ url_for('login') }}"
+                        class="red-text text-darken-4"> Sign In!</a> and tag your favorites by clicking this button!<i
+                        class="material-icons red-text">stars</i></p>
+                <p>If you would like to become part of our Suoper Hero league, then you can <a
+                        href="{{ url_for('register') }}" class="light-blue-text text-darken-4"> Sign Up!</a> and tag
+                    your favorites!</p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -29,7 +37,8 @@
                     </div>
                     <div class="col s12">
                         <a href="{{ url_for('get_comics') }}" class="red btn-small text-shadow logo-text">Reset</a>
-                        <button type="submit" class="btn-small light-blue text-shadow logo-text" style="margin-left: 5px;">Search</button>
+                        <button type="submit" class="btn-small light-blue text-shadow logo-text"
+                            style="margin-left: 5px;">Search</button>
                     </div>
                 </div>
             </form>
@@ -40,8 +49,8 @@
 <!--container and card taken from materialize-followed the minitask project-->
 <div class="container">
     <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
-                        {% for comic in comics %}
-                        <div class="col s12 m4 center-align">
+        {% for comic in comics %}
+        <div class="col s12 m4 center-align">
             <div class="card #ffff00 yellow accent-2 hoverable" style="min-height: 500px;">
                 <div class="card-image waves-effect waves-block waves-light center-align">
                     {% if not comic.cover_image or comic.cover_image == "" %}
@@ -50,11 +59,11 @@
                     <img class="activator " src="{{ comic.cover_image }}" alt="cover image">
                     {% endif %}
                 </div>
-                    {% if session.user|lower %}
-                    <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
-                        class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
-                        data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
-                    {% endif %}
+                {% if session.user|lower %}
+                <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
+                    class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
+                    data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
+                {% endif %}
                 <div class="card-content" style="padding-top: 0px;">
                     <div class="card-title activator grey-text text-darken-4">
                         <ul style="margin-bottom: 0px;">
@@ -91,4 +100,4 @@
         {% endfor %}
     </div>
 </div>
-    {% endblock %}
+{% endblock %}
