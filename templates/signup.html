@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix red-text">stars</i>
-                    <input id="username" name="username" minlength="5" maxlength="25" type="text" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,15}$" class="validate" required>
+                    <input id="username" name="username" minlength="5" maxlength="25" type="text" pattern="[A-Za-z0-9_]{5,20}$" class="validate" required>
                         <!---including helper text-->
                         <span class="helper-text" data-error="Must contain between 5 - 15 characters, 1 number, 1 symbol" data-success="Woohoo! You got it!">Must contain between 5 - 15 characters, 1 number, 1 symbol</span>
                     <!--add required and min/max length-->

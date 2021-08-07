@@ -7,16 +7,19 @@
         <div class="grid-example col s12 center-align logo-text">
             <div class="flow-text">
                 <h1>Our Comic Collection</h1>
-                <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These
-                    are the tales and legends we have recorded in anuals of the history of the Super-verse! So go forth
-                    and peruse yee Super People!</p>
+                {% if session.user %}
+                <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These are the tales and legends we have recorded in anuals of the history of the Super-verse! You can also tag your favorites by clicking this button 
+                <i class="material-icons red-text">stars</i> just on the top of the comic card.</p>
+                <p>So go forth and peruse yee Super People!</p>
+                {% endif %}
                 {% if not session.user %}
+                <p class="logo-text center-align" style="margin-left: 0px;">This is our great libabry of Asgård! These are the tales and
+                legends we have recorded in anuals of the history of the Super-verse! So go forth and peruse yee Super People!</p>
                 <p>If you have become part of our Super Hero league, then you can <a href="{{ url_for('login') }}"
-                        class="red-text text-darken-4"> Sign In!</a> and tag your favorites by clicking this button!<i
-                        class="material-icons red-text">stars</i></p>
-                <p>If you would like to become part of our Suoper Hero league, then you can <a
+                        class="red-text text-darken-4"> Sign In!</a></p>
+                <p>If you would like to become part of our Super Hero league, then you can <a
                         href="{{ url_for('register') }}" class="light-blue-text text-darken-4"> Sign Up!</a> and tag
-                    your favorites!</p>
+                    your favorite comics!</p>
                 {% endif %}
             </div>
         </div>
@@ -31,9 +34,7 @@
                     <div class="input-field col s12 ">
                         <input type="text" name="query" id="query" minlength="3" class="validate" required>
                         <label for="query">Search by Superhero and Title</label>
-                        <span class="helper-text" data-error="Must contain between 5-20 characters"
-                            data-success="Woohoo!">5-20 characters,
-                            only lower class letters</span>
+                        <span class="helper-text" data-success="Woohoo!"></span>
                     </div>
                     <div class="col s12">
                         <a href="{{ url_for('get_comics') }}" class="red btn-small text-shadow logo-text">Reset</a>

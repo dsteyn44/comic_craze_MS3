@@ -39,7 +39,7 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix red-text">verified_user</i>
-                <input value="{{ comic.publisher }}" d="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate"
+                <input value="{{ comic.publisher }}" id="publisher" name="publisher" type="text" minlength="5" maxlength="50" class="validate"
                     required>
                     <span class="helper-text" data-error="5-25 characters"
                         data-success="Woohoo! You got this!">5-25 characters</span>
@@ -68,13 +68,13 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <select id="grade_star" name="grade_star" class="validate">
-                    <option value="" disabled select>Pick your rating</option>
+                    <option value="" disabled selected>Your rating! from 1-5 - optional</option>
                     {% for grade in grades %}
                     <option value="{{ grade.grade_star }}">{{- grade.grade_star -}}</option>
                     {% endfor %}
                 </select>
                 <i class="material-icons prefix light-blue-text text-darken-4"></i>
-                <label>Rate this comic from 1 to 5 stars! - optional</label>
+                 <label style="padding-left: 50px;"></label>
             </div>
         </div>
         <!--image file-->

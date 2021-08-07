@@ -19,7 +19,7 @@
     border-top-width: 40px;
     padding-top: 20px;
     margin-bottom: 0px; font-size: 50px;">Superheroes Unite!</span>
-      <p class="card-title">This is Kapow! Comic Collection. A fun hub for you, the Superhero, to access information on the best comics out there. Add the comics you have read to your Profile and keep a record of the comics you like that other Superheroes have posted. </p>
+      <p class="logo text">This is Kapow! Comic Collection. A fun hub for you, the Superhero, to access information on the best comics out there. Add the comics you have read to your Profile and keep a record of the comics you like that other Superheroes have posted. </p>
       <!---Top 4 best -->
       <div class="container center-align" style="max-width: 100%;">
         <div class="row">
@@ -35,26 +35,26 @@
                 {% endif %}
               </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">
+              <div class="card-title activator grey-text text-darken-4">
                   <p class="card-text"><strong>{{ grade.superhero }}</strong></p>
                   <p><small>{{ grade.title }}</small></p>
                   <p><small>Rating: {{ grade.grade_star }}</small></p>
                   <i class="fas fa-info-circle"></i>
                   <i class="fas fa-caret-down"></i>
-                </span>
+              </div>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{ grade.superhero }}<i
                     class="material-icons right">close</i>
                 </span>
-                <span>
+                <div>
                   <ul class="card-title">
                   <li class="left-align" style="font-size: small;"><strong>Author:</strong> {{ grade.author }}</li>
                   <li class="left-align" style="font-size: small;"><strong>Date Released:</strong> {{ grade.date_released }}</li>
                   <li class="left-align" style="font-size: small;"><strong>Publisher:</strong> {{ grade.publisher }}</li>
                   <li class="left-align" style="font-size: small;"><strong>Synopsis:</strong> {{ grade.comment }}</li>
                   </ul>
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -65,10 +65,9 @@
     </div>
   </div>
 </div>
-</div>
 <div class="parallax-container mask" style="background-color: rgba(11, 198, 204, 0.6)">
   <div class="parallax"><img
       src="https://www.mercurynews.com/wp-content/uploads/2021/01/SJM-L-PIZARRO-COL-0122-01.jpeg" alt="background image">
   </div>
-  </div>
+</div>
 {% endblock %}

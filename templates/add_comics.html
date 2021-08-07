@@ -3,7 +3,7 @@
 <!--Icon prefix from materialize-->
 <h3 class="black-text logo-text center-align" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px; margin-left: 0px;">Add to the Comic Collection</h3>
 <p class="logo-text center-align" style="
-    margin-left: 0px;">!</p>
+    margin-left: 0px;">This is where you can add a comic you have read of have in your possession to the Kapow Comic Collection. As you have signed up whatever comic you add will be added to your profile page.</p>
 <!--The form from materialize-->
 <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
     <form class="card-panel #fffde7 yellow lighten-5 col s12 m6 offset-m3 center-align" method="POST" action="{{ url_for('add_comics') }}">
@@ -67,13 +67,13 @@
         <div class="row">
             <div class="input-field col s12 m8 offset-m2">
                 <select id="grade_star" name="grade_star" class="validate">
-                    <option value="" disabled select>Pick your rating</option>
+                    <option value="" disabled selected>Rate your Comic Stars 1-5</option>
                     {% for grade in grades %}
-                    <option value="{{ grade.grade_star }}"><h4>{{ grade.grade_star }}</h4></option>
+                    <option value="{{ grade.grade_star }}">{{ grade.grade_star }}</option>
                     {% endfor %}
                 </select>
                 <span class="helper-text" data-success="Woohoo! Thank you for your Support!"></span>
-                <label style="padding-left: 10px;">Rate this comic from 1 to 5 stars!</label>
+                <label style="padding-left: 50px;"></label>
             </div>
         </div>
         <!--image file-->
