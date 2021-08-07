@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
+<div class="container" style="height: 1000px;">
+    <div class="row" style="margin-bottom: 0;">
         <div class="col s12">
-            <h2 class="center-align">404 - Page not found </h2>
+            <h2 class="center-align logo-text">404 - Page not found </h2>
             <h5 class="center-align">Sorry, the page you requested could not be found.</h5>
-            <h5 class="center-align"><a href="{{ url_for('home') }}" class="black-cta">Go to homepage</a></h5>
+        <h5 class="center-align black-text logo-text">Go to<a href="{{ url_for('home') }}" class="black-cta red-text logo-text">Home!
             <hr class="blackline">
         </div>
     </div>

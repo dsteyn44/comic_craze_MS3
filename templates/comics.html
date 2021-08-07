@@ -52,7 +52,7 @@
     <div class="row" style="margin-bottom: 0px; padding-bottom: 20px;">
         {% for comic in comics %}
         <div class="col s12 m4 center-align">
-            <div class="card #ffff00 yellow accent-2 hoverable" style="min-height: 500px;">
+            <div class="card #d500f9 purple accent-3 hoverable" style="min-height: 500px;">
                 <div class="card-image waves-effect waves-block waves-light center-align">
                     {% if not comic.cover_image or comic.cover_image == "" %}
                     <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
@@ -63,7 +63,7 @@
                 {% if session.user|lower %}
                 <a href="{{ url_for('tag_favorite', comic_id=comic._id) }}"
                     class="btn-floating btn-small waves-effect waves-light red tooltipped" data-position="bottom"
-                    data-tooltip="A favorite? Add this to your Favourite Collection!"><i class="fas fa-star"></i></a>
+                    data-tooltip="A favorite? Tag this for your Profile!"><i class="fas fa-star"></i></a>
                 {% endif %}
                 <div class="card-content" style="padding-top: 0px;">
                     <div class="card-title activator grey-text text-darken-4">

@@ -31,11 +31,13 @@ As the base grows the site will extend to include some extra features such as: a
 
 -   ### Design
     -   #### Colour Scheme
+     ![mock-up](static/images/ppl_comic_card.png) 
         - I have opted for a comic theme of bright colors echoing the comics from yesteryear.
         - The use of black as the main color of the type is important - mimicing the type of those ink drawn comics.
         - #fffde7 yellow lighten-5 (from Materialize): This was used for the forms and echo the color of the pages comics and how old they become.
         - #00bcd4 cyan (from Materialize): This was used to represent superman's uniform. Maybe a bit of a cliche but something the User will immediatly identify with.
-        - 
+        - The cards( the below being an amber rating card) were all colored differently to distinguish between tagged cards, comic collection cards (added by users)and as ponted out the ratings card.
+        ![mock-up](static/images/ppl_comic_card.png) 
 
     -   #### Typography
         - In regards to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  

@@ -35,6 +35,7 @@
             <h2>Comics you added to the Collection!</h2>
             <p>Go to <a href="{{ url_for('add_comics') }}" class="red-text">Add Comics</a> and add to our comic
                 collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
+                <p>If you would like to look at you tagged favorite comics click <a href="#fav_comics/profile.html" class="red-text">here</a></p>
         </div>
     </div>
 </div>
@@ -43,7 +44,7 @@
         <div class="row">
             {% for comics in user_comics %}
             <div class="col s12 m4 center-align">
-                <div class="card #ffff00 yellow accent-2 hoverable" style="min-height: 500px;">
+                <div class="card #d500f9 purple accent-3 accent-2 hoverable" style="min-height: 500px;">
                     <div class="card-image waves-effect waves-block waves-light center-align">
                         {% if not comics.cover_image or comics.cover_image == "" %}
                         <img class="activator " src="/static/images/kapow.png" alt="alternative cover image">
@@ -89,7 +90,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 logo-text center">
-                        <h2>My Favorite Comics!!</h2>
+                        <h2 id="fav_comics">My Favorite Comics!!</h2>
                         <p>Go to <a href="{{ url_for('get_comics') }}" class="red-text">comics</a> and choose your
                             favorite from the
                             collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
