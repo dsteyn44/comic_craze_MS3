@@ -16,7 +16,7 @@ As the base grows the site will extend to include some extra features such as: a
 
         1. As a First Time User, I want to easily understand the main purpose of the site and learn more about the concept.
         2. As a First Time User, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time User, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+        3. As a First Time User, I would like to sign in easily
 
     -   #### Returning Visitor Goals
 
@@ -31,7 +31,7 @@ As the base grows the site will extend to include some extra features such as: a
 
 -   ### Design
     -   #### Colour Scheme
-     ![mock-up](static/images/ppl_comic_card.png) 
+    
         - I have opted for a comic theme of bright colors echoing the comics from yesteryear.
         - The use of black as the main color of the type is important - mimicing the type of those ink drawn comics.
         - #fffde7 yellow lighten-5 (from Materialize): This was used for the forms and echo the color of the pages comics and how old they become.
@@ -48,6 +48,8 @@ As the base grows the site will extend to include some extra features such as: a
     -   #### Imagery
         - As this project is about comics the typical imagery of comic art is important. The home page reflects this with an image of comics in the background. the rest of the imagery was taken from the website [League of Comic Geeks](https://leagueofcomicgeeks.com/)
 
+
+
 *   ### Wireframes
 
     -   Home Page Wireframe - [View](https://github.com/)
@@ -57,10 +59,15 @@ As the base grows the site will extend to include some extra features such as: a
     -   Contact Us Page Wireframe - [View](https://github.com/)
 
 ## Features
-
+### Current Features
 -   Responsive on all device sizes
 
--   Interactive elements
+-   Interactive elements such as edit and remove buttons. Tag buttons on the comic cards.
+
+### Left to implement
+-   More defensive design elements such as verifying logging out/deletion of information.
+-   Add more CRUD aspects to Profile information eg: delete and editing Profile Information.
+-   Adding social media elements such as a blog.  
 
 ## Technologies Used
 
@@ -144,15 +151,10 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
 
         1. The navigation bar clearly highlights the "Contact Us" Page.
-        2. Here they can fill out the form on the page or are told that alternatively they can message the organisation on social media.
-        3. The footer contains links to the organisations Facebook, Twitter and Instagram page as well as the organization's email.
-        4. Whichever link they click, it will be open up in a new tab to ensure the user can easily get back to the website.
-        5. The email button is set up to automatically open up your email app and autofill there email address in the "To" section.
-
+    
     3. As a Returning Visitor, I want to find the Facebook Group link so that I can join and interact with others in the community.
         1. The Facebook Page can be found at the footer of every page and will open a new tab for the user and more information can be found on the Facebook page.
-        2. Alternatively, the user can scroll to the bottom of the Home page to find the Facebook Group redirect card and can easily join by clicking the "Join Now!" button which like any external link, will open in a new tab to ensure they can get back to the website easily.
-        3. If the user is on the "Our Favourites" page they will also be greeted with a call to action button to invite the user to the Facebook group. The user is incentivized as they are told there is a weekly favourite product posted in the group.
+c
 
 -   #### Frequent User Goals
 
