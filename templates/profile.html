@@ -94,6 +94,8 @@
                         <p>Go to <a href="{{ url_for('get_comics') }}" class="red-text">comics</a> and choose your
                             favorite from the
                             collection. If you are bored with your specific selection - simply click "Goodbye!" </p>
+                            <p style="font-size: 25px;">Go back to the top of the page <a
+                                    href="{{ url_for('profile', username=session['user']) }}" class="red-text">here</a></p>
                     </div>
                 </div>
             </div>

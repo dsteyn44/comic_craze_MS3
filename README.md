@@ -24,12 +24,6 @@ As the base grows the site will extend to include some extra features such as: a
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to sign in with ease so that I can navigate easily.
-    
-
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-        2. As a Frequent User, I want to check to see if there are any new blog posts.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
 
      -  #### Admin User Goals
         1. As an Admin User, I want to check in my profile to view any new added comics.
@@ -52,11 +46,15 @@ As the base grows the site will extend to include some extra features such as: a
         - The main logo is set in "Permanent Marker" from google fonts. At first I used Bungee Shade but I felt tghis did not reflect totally the comic feel of old styled comics of yesteryear. I also used "Permanent Marker" for some of the main copy such as below the headlins on the comics page and Sign-in Sign-up ppages. However for the main copy of the synopsis of the "comic cards", i opeted for Roboto to me clearer.
         - In terms of the icons, I have gone with a mixture of Materialize and Font Awesome icons. 
 
-
     -   #### Imagery
         - As this project is about comics the typical imagery of comic art is important. The home page reflects this with an image of comics in the background. the rest of the imagery was taken from the website [League of Comic Geeks](https://leagueofcomicgeeks.com/)
 
-
+- ### Database
+-  #### MongoDb was used for this project. I established 4 data bases (and a fifth - categories - but have not developed this yet)
+    - comics db: This is is used to store all the information of the comics that are added by the User.
+    - tags db: This is used to store all information and links (eg. user_id) for all the comics that are tagged by the User
+    - users db: This stores all the information of the user. Some information will be used for the future such as fav_superhero - where any new comics that apply here will automaticaally loaded to the profile.
+    -  
 
  *  ### Wireframes
 
@@ -76,14 +74,16 @@ As the base grows the site will extend to include some extra features such as: a
 
 ## Features
 ### Current Features
--   Responsive on all device sizes
-
+-   Responsive on all device sizes.
+-   Users can edit and delete added comics.
 -   Interactive elements such as edit and remove buttons. Tag buttons on the comic cards.
 
 ### Left to implement
 -   More defensive design elements such as verifying logging out/deletion of information.
 -   Add more CRUD aspects to Profile information eg: delete and editing Profile Information.
 -   Adding social media elements such as a blog.  
+-   Adding catagories to the superoes, but with decription of each superhero/ with short bio.
+-   Add links for amazon where they can purchase the comics.
 
 ## Technologies Used
 
@@ -258,7 +258,7 @@ This project is deployed using Heroku. The following steps were taken;
 
 ### Content
 
--   Not all content was written by the developer. Some of the content such as the synopsis of the comic books were taken from the wewbsite [League of Comic Geeks](https://leagueofcomicgeeks.com/)
+-   Not all content was written by the developer. Some of the content such as the synopsis of the comic books were taken from the wewbsite [League of Comic Geeks](https://leagueofcomicgeeks.com/) as well as [Comics database](https://www.comics.org/).
 
 -   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
