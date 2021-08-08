@@ -51,6 +51,9 @@ def search():
 # ---Our sign-up page---
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Check to see if this is a user in session
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
     if request.method == "POST":
 
         existing_user = mongo.db.users.find_one(
@@ -83,6 +86,9 @@ def register():
 # ---build login functionality----
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # Check if this is a user in session
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -192,6 +198,10 @@ def logout():
 # ---Adding Comics---
 @app.route("/add_comics", methods=["GET", "POST"])
 def add_comics():
+    # Users can access only
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
     if request.method == "POST":
         ad_comic = {
             "superhero": request.form.get("superhero"),
@@ -217,6 +227,9 @@ def add_comics():
 # ---Add edit decorator for comics---
 @app.route("/edit_comic/<comic_id>", methods=["GET", "POST"])
 def edit_comic(comic_id):
+    # Users can access only
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
     if request.method == "POST":
         submit = {
             "superhero": request.form.get("superhero"),
