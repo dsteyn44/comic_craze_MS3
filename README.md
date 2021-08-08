@@ -29,6 +29,10 @@ As the base grows the site will extend to include some extra features such as: a
         2. As a Frequent User, I want to check to see if there are any new blog posts.
         3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
 
+     -   #### Admin User Goals
+        1. As an Admin User, I want to check in my profile any new added comics.
+        2. As a Frequent User, I want to check to see if there are any new blog posts.
+
 -   ### Design
     -   #### Colour Scheme
     
