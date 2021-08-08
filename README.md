@@ -41,7 +41,9 @@ As the base grows the site will extend to include some extra features such as: a
         - #fffde7 yellow lighten-5 (from Materialize): This was used for the forms and echo the color of the pages comics and how old they become.
         - #00bcd4 cyan (from Materialize): This was used to represent superman's uniform. Maybe a bit of a cliche but something the User will immediatly identify with.
         - The cards( the below being an amber rating card) were all colored differently to distinguish between tagged cards, comic collection cards (added by users)and as ponted out the ratings card.
-        ![mock-up](static/images/ppl_comic_card.png) 
+        - [Purple Comic Card](static/images/ppl_comic_card.png)
+        - [Cyan Profile Card](static/images/cyan_prof_card.png)
+        - [Amber Rating Card](static/images/amber_rate_card.png)
 
     -   #### Typography
         - In regards to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
@@ -54,13 +56,21 @@ As the base grows the site will extend to include some extra features such as: a
 
 
 
-*   ### Wireframes
+ *  ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/)
+    -   Home Page Wireframe - [View](static/images/wireframes/home.png)
 
-    -   Mobile Wireframe - [View](https://github.com/)
+    -   Comics Wireframe - [View](static/images/wireframes/comics.png)
 
-    -   Contact Us Page Wireframe - [View](https://github.com/)
+    -   Profile Page Wireframe - [View](static/images/wireframes/profile.png)
+
+    -   Add Comics Page Wireframe - [View](static/images/wireframes/add_comic.png)
+
+    -   Edit Comics Page Wireframe - [View](static/images/wireframes/edit_comic.png)
+
+    -   Sign Up Page Wireframe - [View](static/images/wireframes/signup.png)
+
+    -   Sign in Page Wireframe - [View](static/images/wireframes/signin.png)
 
 ## Features
 ### Current Features
@@ -117,14 +127,7 @@ As the base grows the site will extend to include some extra features such as: a
 
 ## Testing
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)1
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
--   [PEP 8](http://pep8online.com/) 
--   []
-
-### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
 
@@ -175,28 +178,13 @@ c
         2. To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
         3. There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
 
-### Further Testing
-
--   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   A large amount of testing was done to ensure that all pages were linking correctly.
--   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
 
 -   On some mobile devices the Edit Comic page pushes the size of screen out more than any of the other content on the page.
     -   A white gap can be seen to the right of the footer and navigation bar as a result. This is only temporary. as far as i can assess it is a result of a div with a class of .hidden_div - assume that it is from materialize.
--   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
 
-### Bug Fix
-
-Backend
--   Was deploying on Heroku but showed an error pymongo Auth fail. I worked out that my MONGO_URI Connection was incorrect.
--   Tried to sign in as "admin" but was thrown an error "UnboundLocalError: local variable 'favorite' referenced before assignment". The reason for this was that the "favorite" value had been assigned to the user but not to the admin. Igor from Tutor support asssisted me with this.
--  Tried to add a flash as defensive design to inform User that the search yielded a no result. On the debugger it returned a "Typeerror ' comics ' not supported between instances of 'list' and 'int' in python. I did some research on Stack overflow and the resolved the issue with a len() method. It proved correct.
-
-Frontend
-- There were many frontend issues possibly and this is not conclusive but possibly as a result of Materialize. Most of the time it was the comic card face content- usually with a  
+ 
     
 ## Deployment
 

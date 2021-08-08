@@ -1,10 +1,13 @@
 #  Testing Ground
 ## Overview 
-
+As this was a data driven project much of the testing was done using friends to check the performances of the 
 #
 ## Validators used: 
-- Jigsaw - I used this for CSS verification. [Jigsaw validator](https://jigsaw.w3.org/).
-- Nu W3 validator - I used this for HTML verification. [W3 validator](https://validator.w3.org/).
+- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)1
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+-   [PEP 8](http://pep8online.com/) 
 - Lighthouse - I used this to check performance. However I have to be honest and say that there was alot I was unsure of but it was good to gage and will be useful in the future. [Lighthouse Chrome](https://developers.google.com/) 
 - 
 
@@ -12,42 +15,42 @@
 
 ### HTML:
 #### home.html 
-![HTML Validator home](images/validators/home_w3_validator.png)
+![HTML Validator home](static/images/validators/home_w3_validator.png)
 
 #### comics.html 
-![HTML Validator comics](images/validators/comic_w3-validator.png)
+![HTML Validator comics](static/images/validators/comic_w3-validator.png)
 
 #### profile.html 
-![HTML Validator profile](images/validators/prof_w3_valid.png)
+![HTML Validator profile](static/images/validators/prof_w3_valid.png)
 
 #### add_comic.html 
-![HTML Validator add comic](images/validators/addcom_w3_valid.png)
+![HTML Validator add comic](static/images/validators/addcom_w3_valid.png)
 
 #### signup.html 
-![HTML Validator sign-up](images/validators/signup_w3_valid.png)
+![HTML Validator sign-up](static/images/validators/signup_w3_valid.png)
 
 #### signin.html 
-![HTML Validator sign-in](images/validators/signin_w3_valid.png)
+![HTML Validator sign-in](static/images/validators/signin_w3_valid.png)
 
 ### CSS:
 #### style.css
+![CSS Validator Jigsaw](static/images/validators/css_w3_.png)
+
+### PEP 8 Compliant:
+#### PEP-8
+-  The PEP-8 online validator was used to check my python code and it proved fine. 
+
+![PEP-8](static/images/validators/pep_8_valid.png)
+
+
 ![CSS Validator Jigsaw](images/validators/css_w3_valid.png)
-
-
 ### Lighthouse:
 - Mobile
 ![CSS Validator Jigsaw](readme-files/CSS.png)
 
 ![Lighthouse Mobile](readme-files/light-mobile.png)
 - Desktop
-## Email.js:
-#### style.css
-![CSS Validator Jigsaw](readme-files/emial.js.png)
 
-![Lighthouse Desktop](readme-files/light-desktop.png)
-
-
-#
 ## Responsiveness
 
 For the responsiveness I used Chrome Developer Tools to check how the website would behave. However saying this I must add that it did not always give a correct or real account on the device. Of course it is only a tool and not but I found one instance where it did not give me the correct response. This was an instance it was for mobile phone (iPhone X). On Dev tools it showed the main figure on the front-page was clearly visible but when I uploaded this on my device his head appeared cut-off by the jumbotron. The image looked too big. I did clear this up later by adding a media query and viewpoint height.  
@@ -58,6 +61,15 @@ I also used [Responsive Design Checker](www.responsivedesignchecker.com) and thi
 ## Bugs
 - script.js and slider.js <script> would not load in index.html.
 Action: it was the incorrect path in the script. works now.
+
+
+### Further Testing
+
+-   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   A large amount of testing was done to ensure that all pages were linking correctly.
+-   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
 
 ## User stories
 
@@ -93,12 +105,18 @@ Action: it was the incorrect path in the script. works now.
 #### As festival organiser/ Concert organiser I want to see who account for their fans  so that i can see if they are are suitable for the content that I provide.
 - As a Concert agent they can gage the newer fans and the frenquent fans by visiting the Fanwall. It will be up to date with what the band is doing. 
 #
-#Bugs:
-dots.svg, when opened in github would error
-Action: I had to remove some of the code in the <svg> to make allow it to be accepted.
-The dots.svg would not change color when I added it to HTML as an image so I copied the sag code and added it directly into the <span> that I used to hold the hamburger toggle icon. Here I was able to manipulate the <svg> to the ivory I wanted to use. 
-Action:
-Slider Bug - when I added the slider it disappears when you respond vertically.
+### Bug Fix
+
+Backend
+-   Was deploying on Heroku but showed an error pymongo Auth fail. I worked out that my MONGO_URI Connection was incorrect.
+-   Tried to sign in as "admin" but was thrown an error "UnboundLocalError: local variable 'favorite' referenced before assignment". The reason for this was that the "favorite" value had been assigned to the user but not to the admin. Igor from Tutor support asssisted me with this.
+-  Tried to add a flash as defensive design to inform User that the search yielded a no result. On the debugger it returned a "Typeerror ' comics ' not supported between instances of 'list' and 'int' in python. I did some research on Stack overflow and the resolved the issue with a len() method. It proved correct.
+
+Frontend
+- There were many frontend issues and although this is not conclusive, but possibly as a result of Materialize. Most of the time it was the comic card face content- that had shifted 50px to the left but this was fixed using DevTools on Google, testing the change and then applying iy directly into the HTML. 
+- 
+
+
 ## User stories
 
 ## Side Notes
