@@ -18,16 +18,15 @@ As the base grows the site will extend to include some extra features such as: a
         2. As a First Time User, I want to be able to easily navigate throughout the site to find content.
         3. As a First Time User, I would like to sign in easily.
         4. As a First Time User, I would like to add a new comic if I should wish.
-        5. As a First Time User, I would like to add a remove a new comic if I should wish.
-        6. As a First Time User, I would like to tag a new comic and add it to my collection.
+        5. As a First Time User, I would like to tag a new comic and add it to my collection.
 
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to sign in with ease so that I can navigate easily.
+        2. As a Returning User, I would like to remove or edit a new comic if I should wish.
 
      -  #### Admin User Goals
         1. As an Admin User, I want to check in my profile to view any new added comics.
-
 
 -   ### Design
     -   #### Colour Scheme
@@ -44,7 +43,7 @@ As the base grows the site will extend to include some extra features such as: a
     -   #### Typography
         - In regards to the text, again I have tried to follow the traditional comic fonts where possible and where it does not intervene with the readibility.  
         - The main logo is set in "Permanent Marker" from google fonts. At first I used Bungee Shade but I felt tghis did not reflect totally the comic feel of old styled comics of yesteryear. I also used "Permanent Marker" for some of the main copy such as below the headlins on the comics page and Sign-in Sign-up ppages. However for the main copy of the synopsis of the "comic cards", i opeted for Roboto to me clearer.
-        - In terms of the icons, I have gone with a mixture of Materialize and Font Awesome icons. 
+        - In terms of the icons, I have gone with a mixture of Materialize and Font Awesome icons. mainly trying to go with a superhero theme.
 
     -   #### Imagery
         - As this project is about comics the typical imagery of comic art is important. The home page reflects this with an image of comics in the background. the rest of the imagery was taken from the website [League of Comic Geeks](https://leagueofcomicgeeks.com/)
@@ -54,7 +53,8 @@ As the base grows the site will extend to include some extra features such as: a
     - comics db: This is is used to store all the information of the comics that are added by the User.
     - tags db: This is used to store all information and links (eg. user_id) for all the comics that are tagged by the User
     - users db: This stores all the information of the user. Some information will be used for the future such as fav_superhero - where any new comics that apply here will automaticaally loaded to the profile.
-    -  
+
+    [View tag Architecture here](static/images/tag_arch.png)
 
  *  ### Wireframes
 
@@ -84,6 +84,7 @@ As the base grows the site will extend to include some extra features such as: a
 -   Adding social media elements such as a blog.  
 -   Adding catagories to the superoes, but with decription of each superhero/ with short bio.
 -   Add links for amazon where they can purchase the comics.
+-   I would also like to add pagination in my htnl so that there is not too many comics on the page.
 
 ## Technologies Used
 
@@ -219,17 +220,17 @@ Leave the cluster name as the default Cluster0, but I'm going to rename mine to'
 - Use camelCase such as MyFirstCluster.
 
 ### Working with the local copy (once you have set up your Mongo )
-Create the environment variables
-Create a .gitignore file in the root directory of the project.
-Add the env.py file in the .gitignore.
-Create the file env.py. This will contain all the envornment variables.
+ - Create the environment variables
+ - Create a .gitignore file in the root directory of the project.
+-  Add the env.py file in the .gitignore.
+- Create the file env.py. This will contain all the envornment variables.
 Import os
-os.environ.setdefault("IP", "Added by developer")
-os.environ.setdefault("PORT", "Added by developer")
-os.environ.setdefault("SECRET_KEY", "Added by developer")
-os.environ.setdefault("MONGO_URI", "Added by developer")
-os.environ.setdefault("MONGO_DBNAME", "Added by developer")
-Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+ - os.environ.setdefault("IP", "Added by developer")
+ - os.environ.setdefault("PORT", "Added by developer")
+ - os.environ.setdefault("SECRET_KEY", "Added by developer")
+ - os.environ.setdefault("MONGO_URI", "Added by developer")
+ - os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+ - Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
 
 
 ### Setting up Heroku
@@ -272,13 +273,13 @@ This project is deployed using Heroku. The following steps were taken;
 
 ### Content
 
--   Not all content was written by the developer. Some of the content such as the synopsis of the comic books were taken from the wewbsite [League of Comic Geeks](https://leagueofcomicgeeks.com/) as well as [Comics database](https://www.comics.org/).
+-   Not all content was written by the developer. Some of the content such as the synopsis of the comic books were taken from the website [League of Comic Geeks](https://leagueofcomicgeeks.com/) as well as [Comics database](https://www.comics.org/).
 
 -   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 
--   Freep
+-   All media was taken from either WikiPedia,  or the websites of [League of Comic Geeks](https://leagueofcomicgeeks.com/) as well as [Comics database](https://www.comics.org/).
 
 ### Acknowledgements
 

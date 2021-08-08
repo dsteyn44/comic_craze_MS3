@@ -3,7 +3,7 @@
 As this was a data driven project much of the testing was done using friends to check the performances of the app. In the beginning the regex was too stringfent and users were unable to "easily" sign-up. 
 #
 ## Validators used: 
-- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+- The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. PEP-8 was used for the python code.
 
 -   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
@@ -64,32 +64,32 @@ I also used [Responsive Design Checker](www.responsivedesignchecker.com) and thi
     -   #### First Time User Goals
 
         1. As a First Time User, I want to easily understand the main purpose of the site and learn more about the concept.
+         - There is informtion in the hero text to send you in the right direction and explains the prupose of the site.
 
         2. As a First Time User, I want to be able to easily navigate throughout the site to find content.
+        - The same as above there is guidence in the hero text in the home.html to let you know in which direction to go.
 
         3. As a First Time User, I would like to sign in easily.
+        - I have added REGEX to the sign in and resposive text to let the user know that they are correct.
 
         4. As a First Time User, I would like to add a new comic if I should wish.
+        - Once a user has signed in they can immediately start adding the comic of their choice.
 
-        5. As a First Time User, I would like to add a remove a new comic if I should wish.
-
-        6. As a First Time User, I would like to add a remove a new comic if I should wish.
+        6. As a First Time User, I would like to tag a new comic if I should wish.
+        - First time users can tag a comic by clicking on the star.
 
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to see sign in with ease so that I can navigate easily.
-    
+        1. As a Returning User, I want to see sign in with ease so that I can navigate easily.
+        - There is direction to sign in and navigate thereafter.
 
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-
-        2. As a Frequent User, I want to check to see if there are any new comics.
-
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+        2. As a Returning User, I would like to remove a new comic if I should wish.
+        - This can only be done if the User added the comic himself but it is possible to do this by clicking on the "Goodbye" button.
 
      -   #### Admin User Goals
         1. As an Admin User, I want to check in my profile to view any new added comics.
+        - All comics that are added in the comics pager are automatically downloaded in the admins page so that he has control. 
 
 Backend
 -   Was deploying on Heroku but showed an error pymongo Auth fail. I worked out that my MONGO_URI Connection was incorrect.
