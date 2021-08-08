@@ -218,6 +218,20 @@ Leave the cluster name as the default Cluster0, but I'm going to rename mine to'
 - This is where we can create our database.
 - Use camelCase such as MyFirstCluster.
 
+### Working with the local copy (once you have set up your Mongo )
+Create the environment variables
+Create a .gitignore file in the root directory of the project.
+Add the env.py file in the .gitignore.
+Create the file env.py. This will contain all the envornment variables.
+Import os
+os.environ.setdefault("IP", "Added by developer")
+os.environ.setdefault("PORT", "Added by developer")
+os.environ.setdefault("SECRET_KEY", "Added by developer")
+os.environ.setdefault("MONGO_URI", "Added by developer")
+os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+
 ### Setting up Heroku
 This project is deployed using Heroku. The following steps were taken;
 

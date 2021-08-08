@@ -52,7 +52,7 @@ def search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     # Check to see if this is a user in session
-    if not session.get("user"):
+    if session.get("user"):
         return render_template("error_handlers/404.html")
     if request.method == "POST":
 
@@ -87,7 +87,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     # Check if this is a user in session
-    if not session.get("user"):
+    if session.get("user"):
         return render_template("error_handlers/404.html")
     if request.method == "POST":
         # check if username exists in db
